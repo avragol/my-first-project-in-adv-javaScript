@@ -1,0 +1,10 @@
+#register-page {
+
+    .myFormWidth {
+        width: 50%;
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+}
