@@ -1,14 +1,14 @@
 import User from "../models/User.js";
+import UserAddress from "../models/UserAddress.js";
 
 const createUserData = () => {
     return [
-        new User("Avi", "avi@avi.il", "Aa123456!", true),
-        new User("Bvi", "bvi@bvi.il", "Aa123456!")
+        new User("Avi", "Levi", new UserAddress("", "", "Israel", "", 156, ""), "avi@levi.il", "Aa123456!", "", true),
+        new User("Dani", "Gal", new UserAddress("", "", "Israel", "", 157, ""), "dani@gal.il", "Aa123456!", "", false)
     ];
 }
 
 const setInitialUsersData = () => {
-    console.log("ping");
     if (localStorage.getItem("users")) {
         return;
     }

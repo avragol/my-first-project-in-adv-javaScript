@@ -1,0 +1,9 @@
+nav {
+    #mainMenu {
+        align-items: center;
+
+        @include breapointMd {
+            align-items: start;
+        }
+    }
+}

@@ -5,7 +5,7 @@ const validateEmail = (enailToCheck) => {
         "^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$",
         "ig"
     );
-    return validate(enailToCheck, regEmail, 5, 255).map((err) => `Email is ${err}`);
+    return validate(enailToCheck, regEmail, 5, 255);
 }
 
 export default validateEmail;

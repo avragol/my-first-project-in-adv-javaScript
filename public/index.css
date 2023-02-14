@@ -1,8 +1,14 @@
-#register-page .myFormWidth {
-  width: 50%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-@media (max-width: 576px) {
-  #register-page .myFormWidth {
-    width: 100%;
+
+nav #mainMenu {
+  align-items: center;
+}
+@media (max-width: 767px) {
+  nav #mainMenu {
+    align-items: start;
   }
 }/*# sourceMappingURL=index.css.map */

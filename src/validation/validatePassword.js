@@ -5,7 +5,7 @@ const validatePassword = (passwordToCheck) => {
         "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,255}$",
         "g"
     );
-    return validate(passwordToCheck, regPassword, 5, 255).map((err) => `Password is ${err}`);
+    return validate(passwordToCheck, regPassword, 5, 255);
 }
 
 export default validatePassword;

@@ -1,5 +1,11 @@
-@mixin mobile {
-    @media (max-width:576px) {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin breapointMd {
+    @media (max-width:767px) {
         @content;
     }
 }
