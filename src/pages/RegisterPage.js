@@ -1,10 +1,12 @@
+/*IMPORTS*/
 import User from "../models/User.js";
 import UserAddress from "../models/UserAddress.js"
 import validateName from "../validation/validateName.js";
 import validatePassword from "../validation/validatePassword.js";
 import validateEmail from "../validation/validateEmail.js";
+import checkInput from "../utils/checkInput.js";
 
-
+/* SET ELEMNTS TO VARIBELS */
 const registerInputFirstName = document.getElementById("register-input-firstName");
 const registerInputLastName = document.getElementById("register-input-lastName");
 const registerInputEmail = document.getElementById("register-input-email");
@@ -17,29 +19,19 @@ const registerAlertRePassword = document.getElementById("register-alert-rePasswo
 const registerAlertFirstName = document.getElementById("register-alert-firstName");
 const registerAlertLastName = document.getElementById("register-alert-lastName");
 
+/* set boolean varibels that holds true if the validation is correct */
 let firstNameOk;
 let lastNameOk;
 let emailOk;
 let passwordOk;
 let rePasswordOk;
 
-const checkInput = (inputToCheck, alert, errorArr, inputTitle = "It") => {
-    if (errorArr.length === 0) {
-        inputToCheck.classList.remove("is-invalid");
-        alert.innerHTML = ``;
-        return true;
-    } else {
-        inputToCheck.classList.add("is-invalid")
-        alert.innerHTML = `${inputTitle} is ${errorArr.join(" and ")}`;
-        return false;
-    }
-}
-
+/* function that  able the register btn if everythings is in right place*/
 const checkIfCanAbledBtn = () => {
     registerBtn.disabled = (!(firstNameOk && lastNameOk && emailOk && passwordOk && rePasswordOk));
 }
 
-
+/* when the page load, do the validation for inputs that have a value */
 window.addEventListener("load", () => {
     if (registerInputFirstName.value) {
         firstNameOk = checkInput(registerInputFirstName, registerAlertFirstName, validateName(registerInputFirstName.value), "first Name");
@@ -58,6 +50,7 @@ window.addEventListener("load", () => {
     { once: true }
 )
 
+/* do validation for every required inputs when typing in them */
 registerInputFirstName.addEventListener("input", () => {
     firstNameOk = checkInput(registerInputFirstName, registerAlertFirstName, validateName(registerInputFirstName.value), "first Name");
     checkIfCanAbledBtn();
@@ -85,31 +78,39 @@ registerInputRePassword.addEventListener("input", () => {
     checkIfCanAbledBtn()
 })
 
+/* create new user when click on the register btn (more deatels inside the function) */
 registerBtn.addEventListener("click", () => {
     if (!(firstNameOk && lastNameOk && emailOk && passwordOk && rePasswordOk)) {
+        //if someone try to able the btn from devTool
         return;
     }
+    //get the users array from local storge
     let usersArr = JSON.parse(localStorage.getItem("users"));
-
     if (!usersArr) {
+        //if there no any user, creat the arrary.
         usersArr = [createUser()];
     } else {
         for (let user of usersArr) {
             if (user.email === registerInputEmail.value) {
+                //check if the ameil is exist and print correct msg
                 registerAlertEmail.innerHTML = `This email is exist`;
                 registerInputEmail.classList.add("is-invalid");
                 return;
             }
         }
+        //if there is alredy array of users, and the email isn't exist, add new user to the array.
         usersArr = [...usersArr, createUser()];
     }
+    //save the array to the local storge.
     localStorage.setItem("users", JSON.stringify(usersArr));
 })
 
+/* clear all inputs in the form when click on the clear btn */
 document.getElementById("register-clear-btn").addEventListener("click", () => {
     document.getElementById("register-form").querySelectorAll("input").forEach((item) => { item.value = "" });
 });
 
+/* that function return a new user that create with the classes User and UserAdress and get thw values of the form inputs */
 const createUser = () => {
     return new User(
         registerInputFirstName.value,

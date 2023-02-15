@@ -1,3 +1,4 @@
+/* A function that receives a regex variable, some value, minimum and maximum length, and returns an array of errors if there is a problem with the value */
 const validate = (value, regex, min, max) => {
     let mesageArr = [];
     if (value.length < min) {
