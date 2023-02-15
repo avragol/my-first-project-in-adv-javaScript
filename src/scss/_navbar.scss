@@ -2,7 +2,7 @@ nav {
     #mainMenu {
         align-items: center;
 
-        @include breapointMd {
+        @include breakpointMd {
             align-items: start;
         }
     }

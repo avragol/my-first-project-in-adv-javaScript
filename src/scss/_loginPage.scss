@@ -1,0 +1,15 @@
+#login-page {
+
+    form {
+        width: 50%;
+
+        @include breakpointMd {
+            width: 100%;
+        }
+    }
+
+    .lead {
+        font-size: 0.9rem !important;
+    }
+
+}

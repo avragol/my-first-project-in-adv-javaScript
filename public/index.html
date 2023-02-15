@@ -70,11 +70,30 @@
                 <h1>Home page</h1>
             </div>
             <!-- login page -->
-            <div id="login-page" class="d-none">
-                <h1>Login page</h1>
+            <div id="login-page" class="d-block">
+                <h1 class="display-4 mt-1 text-center">Login page</h1>
+                <h3 class="text-center">Welcome back! Log in to continue your journey.</h2>
+                    <form
+                        class="bg-primary-subtle p-4 mt-3 rounded position-relative start-50 translate-middle-x w-mb-50"
+                        id="login-form">
+                        <label for="email">Email<span class="text-danger">*</span>
+                            <div class="d-inline text-danger" id="login-alert-email"></div>
+                        </label>
+                        <input type="email" class="form-control" id="login-input-email">
+                        <label for="password">Password<span class="text-danger">*</span>
+                            <div class="d-inline text-danger" id="login-alert-password"></div>
+                        </label>
+                        <input type="password" class="form-control mb-1" id="login-input-password">
+                        <small class="text-muted lead">Not a member yet? <a href="#" id="takeFromLogToSign">Join now
+                            </a></small>
+                        <button type="button" class="btn btn-outline-primary mt-2 w-100" disabled="true"
+                            id="login-btn">Log in!</button>
+                        <div class="text-danger" id="login-alert"></div>
+                    </form>
+
             </div>
             <!-- Register page -->
-            <div id="register-page" class="d-block">
+            <div id="register-page" class="d-none">
                 <h1 class="display-4 mt-1 text-center">Register page</h1>
                 <h3 class="text-center">Start your journey by creating an account</h2>
                     <form class="bg-primary-subtle p-4 rounded" id="register-form">
@@ -166,18 +185,19 @@
                             </label>
                         </div>
                         <button type="button" class="btn btn-outline-primary mt-3 w-100" disabled="true"
-                            id="register-btn">Sign Up!</button>
+                            id="register-btn">Sign
+                            Up!</button>
                         <button type="button" class="btn btn-outline-warning mt-2 w-100 text-secondary"
                             id="register-clear-btn">Clear
                             all</button>
                     </form>
-
             </div>
         </main>
 
 
     </div>
-    <footer class="container-fluid bg-primary text-light text-center mt-5 buttom-0">
+    <div class="marginForTheFooter"></div>
+    <footer class="container-fluid bg-primary text-light text-center mt-5">
         <p class="mb-0">&copy; 2023 PicPort. All rights reserved.<br>
             Developed by Avraham Gol</p>
     </footer>
