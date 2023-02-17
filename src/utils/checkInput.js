@@ -1,4 +1,4 @@
-/* the function performs the validation and prints the correct message if there is a problem
+/* the function performs the validation and prints the correct message if there is a problem.
 additionally, the function return true or false in step to the validation
 the function ask for the - 
 * input that i want to chack

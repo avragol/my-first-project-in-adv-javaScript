@@ -23,6 +23,16 @@ const checkIfCanAbledBtn = () => {
     loginBtn.disabled = (!(emailOk && passwordOk));
 }
 
+window.addEventListener("load", () => {
+    if (loginInputPassword.value) {
+        passwordOk = checkInput(loginInputPassword, loginAlertPassword, validatePassword(loginInputPassword.value), "Password");
+    }
+    if (loginInputEmail.value) {
+        emailOk = checkInput(loginInputEmail, loginAlertEmail, validateEmail(loginInputEmail.value), "Email");
+    }
+    checkIfCanAbledBtn();
+})
+
 loginInputEmail.addEventListener("input", () => {
     emailOk = checkInput(loginInputEmail, loginAlertEmail, validateEmail(loginInputEmail.value), "Email");
     checkIfCanAbledBtn();

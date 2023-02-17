@@ -35,7 +35,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" href="#">About us</a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown d-none" id="admin-option-link">
                             <a class="nav-link dropdown-toggle text-light" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Admin options
@@ -51,15 +51,16 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav d-flex flex-row mt-2">
-                        <li class="nav-item me-2"><a class="nav-link text-light" href="#"
+                        <li class="nav-item me-2"><a class="nav-link text-light d-none" href="#"
                                 id="register-page-link">Register</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link text-light" href="#" id="login-page-link">Log in</a>
+                        <li class="nav-item"><a class="nav-link text-light d-none" href="#" id="login-page-link">Log
+                                in</a>
                         </li>
-                    </ul>
-                    <ul class="navbar-nav d-flex flex-row d-none">
-                        <li class="nav-item me-2"><a class="nav-link text-light" href="#">Name</a></li>
-                        <li class="nav-item"><a class="nav-link text-light" href="#">Log out</a></li>
+                        <li class="nav-item me-2"><a class="nav-link text-light d-none" id="profile-page-link"
+                                href="#"></a></li>
+                        <li class="nav-item"><a class="nav-link text-light d-none" id="log-out-link" href="#">Log
+                                out</a></li>
                     </ul>
                 </div>
             </div>
@@ -70,7 +71,7 @@
                 <h1>Home page</h1>
             </div>
             <!-- login page -->
-            <div id="login-page" class="d-block">
+            <div id="login-page" class="d-none">
                 <h1 class="display-4 mt-1 text-center">Login page</h1>
                 <h3 class="text-center">Welcome back! Log in to continue your journey.</h2>
                     <form
@@ -190,6 +191,104 @@
                         <button type="button" class="btn btn-outline-warning mt-2 w-100 text-secondary"
                             id="register-clear-btn">Clear
                             all</button>
+                    </form>
+            </div>
+            <!-- Profile page -->
+            <div id="profile-page" class="d-block">
+                <h1 class="display-4 mt-1 text-center">Profile page</h1>
+                <h3 class="text-center">Start your journey by creating an account</h2>
+                    <form class="bg-primary-subtle p-4 rounded" id="profile-form">
+                        <div class="form-group">
+                            <label for="name" class="fw-bold">Name:</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="firstName">First name<span class="text-danger">*</span>
+                                        <div class="d-inline text-danger" id="profile-alert-firstName"></div>
+                                    </label>
+                                    <input type="text" class="form-control" id="profile-input-firstName">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastName">Last name<span class="text-danger">*</span>
+                                        <div class="d-inline text-danger" id="profile-alert-lastName"></div>
+                                    </label>
+                                    <input type="text" class="form-control" id="profile-input-lastName">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="address" class="fw-bold">Address:</label>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="state">State</label>
+                                    <input type="text" class="form-control" id="profile-input-state">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="city">City</label>
+                                    <input type="text" class="form-control" id="profile-input-city">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="country">Country</label>
+                                    <input type="text" class="form-control" id="profile-input-country">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label for="street">Street</label>
+                                    <input type="text" class="form-control" id="profile-input-street">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="houseNumber">House number</label>
+                                    <input type="number" class="form-control" id="profile-input-houseNumber">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="zipCode">Zip code</label>
+                                    <input type="text" class="form-control" id="profile-input-zipCode">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="meansOfCash" class="fw-bold">Means of contact:</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="email">Email<span class="text-danger">*</span>
+                                        <div class="d-inline text-danger" id="profile-alert-email"></div>
+                                    </label>
+                                    <input type="email" class="form-control" id="profile-input-email">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone">Phone</label>
+                                    <input type="tel" class="form-control" id="profile-input-phone">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="security" class="fw-bold">Security:</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="password">Password<span class="text-danger">*</span>
+                                        <div class="d-inline text-danger" id="profile-alert-password"></div>
+                                    </label>
+                                    <input type="password" class="form-control" id="profile-input-password">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reEnterPassword">Re-enter password<span class="text-danger">*</span>
+                                        <div class="d-inline text-danger d-none" id="profile-alert-rePassword">No match
+                                        </div>
+                                    </label>
+                                    <input type="password" class="form-control" id="profile-input-rePassword">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-check mt-3 d-flex justify-content-center">
+                            <input class="form-check-input me-1" type="checkbox" value="" id="profile-input-isAdmin">
+                            <label class="form-check-label ms-1" for="flexCheckDefault">
+                                Admin user
+                            </label>
+                        </div>
+                        <button type="button" class="btn btn-outline-primary mt-3 w-100" disabled="true"
+                            id="profile-btn">Save</button>
+                        <button type="button" class="btn btn-outline-danger mt-2 w-100"
+                            id="profile-clear-btn">Cencel</button>
                     </form>
             </div>
         </main>
