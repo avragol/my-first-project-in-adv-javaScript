@@ -11,7 +11,7 @@ const ADMINOPTIONLINK = document.getElementById("admin-option-link");
 HOMEMENULINK.addEventListener("click", () => { switchPage(PAGES.HOME) });
 LOGINMENULINK.addEventListener("click", () => { switchPage(PAGES.LOGIN) });
 REGISTERMENULINK.addEventListener("click", () => { switchPage(PAGES.REGISTER) });
-
+PROFILEMENULINK.addEventListener("click", () => { switchPage(PAGES.PROFILE) });
 LOGOUTMENULINK.addEventListener("click", () => {
     localStorage.removeItem("userToken");
     location.reload();

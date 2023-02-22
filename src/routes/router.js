@@ -1,6 +1,6 @@
 import PAGES from "../models/PageModel.js";
 
-const pagesArr = [PAGES.HOME, PAGES.LOGIN, PAGES.REGISTER];
+const pagesArr = [PAGES.HOME, PAGES.LOGIN, PAGES.REGISTER, PAGES.PROFILE];
 
 const switchPage = (pageToDisplay) => {
     for (let page of pagesArr) {
