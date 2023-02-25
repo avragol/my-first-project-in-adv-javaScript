@@ -67,30 +67,76 @@
         </nav>
         <main>
             <!-- home page -->
-            <div id="home-page" class="d-none">
-                <h1>Home page</h1>
+            <div id="home-page" class="d-block">
+                <h1 class="display-4 mt-1 text-center">Home page</h1>
+                <h3 class="text-center">A World of Stunning Images at Your Fingertips</h3>
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="5000">
+                            <img src="https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg"
+                                class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="5000">
+                            <img src="https://cdn.pixabay.com/photo/2020/03/13/14/06/dead-sea-4927978_1280.jpg"
+                                class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Second slide label</h5>
+                                <p>Some representative placeholder content for the second slide.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="5000">
+                            <img src="https://cdn.pixabay.com/photo/2015/05/21/00/08/wailing-wall-776366_1280.jpg"
+                                class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Third slide label</h5>
+                                <p>Some representative placeholder content for the third slide.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
             <!-- login page -->
             <div id="login-page" class="d-none">
                 <h1 class="display-4 mt-1 text-center">Login page</h1>
-                <h3 class="text-center">Welcome back! Log in to continue your journey.</h2>
-                    <form
-                        class="bg-primary-subtle p-4 mt-3 rounded position-relative start-50 translate-middle-x w-mb-50"
-                        id="login-form">
-                        <label for="email">Email<span class="text-danger">*</span>
-                            <div class="d-inline text-danger" id="login-alert-email"></div>
-                        </label>
-                        <input type="email" class="form-control" id="login-input-email">
-                        <label for="password">Password<span class="text-danger">*</span>
-                            <div class="d-inline text-danger" id="login-alert-password"></div>
-                        </label>
-                        <input type="password" class="form-control mb-1" id="login-input-password">
-                        <small class="text-muted lead">Not a member yet? <a href="#" id="takeFromLogToSign">Join now
-                            </a></small>
-                        <button type="button" class="btn btn-outline-primary mt-2 w-100" disabled="true"
-                            id="login-btn">Log in!</button>
-                        <div class="text-danger" id="login-alert"></div>
-                    </form>
+                <h3 class="text-center">Welcome back! Log in to continue your journey.</h3>
+                <form class="bg-primary-subtle p-4 mt-3 rounded position-relative start-50 translate-middle-x w-mb-50"
+                    id="login-form">
+                    <label for="email">Email<span class="text-danger">*</span>
+                        <div class="d-inline text-danger" id="login-alert-email"></div>
+                    </label>
+                    <input type="email" class="form-control" id="login-input-email">
+                    <label for="password">Password<span class="text-danger">*</span>
+                        <div class="d-inline text-danger" id="login-alert-password"></div>
+                    </label>
+                    <input type="password" class="form-control mb-1" id="login-input-password">
+                    <small class="text-muted lead">Not a member yet? <a href="#" id="takeFromLogToSign">Join now
+                        </a></small>
+                    <button type="button" class="btn btn-outline-primary mt-2 w-100" disabled="true" id="login-btn">Log
+                        in!</button>
+                    <div class="text-danger" id="login-alert"></div>
+                </form>
 
             </div>
             <!-- Register page -->
@@ -195,7 +241,7 @@
                     </form>
             </div>
             <!-- Profile page -->
-            <div id="profile-page" class="d-block">
+            <div id="profile-page" class="d-none">
                 <h1 class="display-4 mt-1 text-center">Profile page</h1>
                 <h3 class="text-center">Navigate your journey: Manage your account information</h2>
                     <form class="bg-primary-subtle p-4 rounded" id="profile-form">

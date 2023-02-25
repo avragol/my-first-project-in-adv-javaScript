@@ -3,5 +3,6 @@ import "./components/Footer.js";
 import "./pages/RegisterPage.js"
 import "./pages/LoginPage.js";
 import "./pages/ProfilePage.js";
+import "./pages/HomePage.js";
 import "./initialData/initialUsersData.js"
 import "./initialData/initialPicturesData.js"
