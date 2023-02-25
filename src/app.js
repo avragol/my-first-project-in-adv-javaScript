@@ -4,3 +4,4 @@ import "./pages/RegisterPage.js"
 import "./pages/LoginPage.js";
 import "./pages/ProfilePage.js";
 import "./initialData/initialUsersData.js"
+import "./initialData/initialPicturesData.js"
