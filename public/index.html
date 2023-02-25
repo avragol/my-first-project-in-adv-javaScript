@@ -120,29 +120,30 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <label for="state">State</label>
-                                    <input type="text" class="form-control" id="register-input-state">
+                                    <input type="text" class="form-control" maxlength="20" id="register-input-state">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="city">City</label>
-                                    <input type="text" class="form-control" id="register-input-city">
+                                    <input type="text" class="form-control" maxlength="20" id="register-input-city">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="country">Country</label>
-                                    <input type="text" class="form-control" id="register-input-country">
+                                    <input type="text" class="form-control" maxlength="20" id="register-input-country">
                                 </div>
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-6">
                                     <label for="street">Street</label>
-                                    <input type="text" class="form-control" id="register-input-street">
+                                    <input type="text" class="form-control" maxlength="20" id="register-input-street">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="houseNumber">House number</label>
-                                    <input type="number" class="form-control" id="register-input-houseNumber">
+                                    <input type="number" class="form-control" maxlength="5"
+                                        id="register-input-houseNumber">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="zipCode">Zip code</label>
-                                    <input type="text" class="form-control" id="register-input-zipCode">
+                                    <input type="text" class="form-control" maxlength="10" id="register-input-zipCode">
                                 </div>
                             </div>
                         </div>
@@ -157,7 +158,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="phone">Phone</label>
-                                    <input type="tel" class="form-control" id="register-input-phone">
+                                    <input type="tel" class="form-control" maxlength="15" id="register-input-phone">
                                 </div>
                             </div>
                         </div>
@@ -196,7 +197,7 @@
             <!-- Profile page -->
             <div id="profile-page" class="d-block">
                 <h1 class="display-4 mt-1 text-center">Profile page</h1>
-                <h3 class="text-center">Start your journey by creating an account</h2>
+                <h3 class="text-center">Navigate your journey: Manage your account information</h2>
                     <form class="bg-primary-subtle p-4 rounded" id="profile-form">
                         <div class="form-group">
                             <label for="name" class="fw-bold">Name:</label>
@@ -220,29 +221,30 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <label for="state">State</label>
-                                    <input type="text" class="form-control" id="profile-input-state">
+                                    <input type="text" class="form-control" maxlength="20" id="profile-input-state">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="city">City</label>
-                                    <input type="text" class="form-control" id="profile-input-city">
+                                    <input type="text" class="form-control" maxlength="20" id="profile-input-city">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="country">Country</label>
-                                    <input type="text" class="form-control" id="profile-input-country">
+                                    <input type="text" class="form-control" maxlength="20" id="profile-input-country">
                                 </div>
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-6">
                                     <label for="street">Street</label>
-                                    <input type="text" class="form-control" id="profile-input-street">
+                                    <input type="text" class="form-control" maxlength="20" id="profile-input-street">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="houseNumber">House number</label>
-                                    <input type="number" class="form-control" id="profile-input-houseNumber">
+                                    <input type="number" class="form-control" maxlength="5"
+                                        id="profile-input-houseNumber">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="zipCode">Zip code</label>
-                                    <input type="text" class="form-control" id="profile-input-zipCode">
+                                    <input type="text" class="form-control" maxlength="10" id="profile-input-zipCode">
                                 </div>
                             </div>
                         </div>
@@ -257,7 +259,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="phone">Phone</label>
-                                    <input type="tel" class="form-control" id="profile-input-phone">
+                                    <input type="tel" class="form-control" maxlength="15" id="profile-input-phone">
                                 </div>
                             </div>
                         </div>
@@ -286,7 +288,7 @@
                             </label>
                         </div>
                         <button type="button" class="btn btn-outline-primary mt-3 w-100" disabled="true"
-                            id="profile-btn">Save</button>
+                            id="profile-save-btn">Save</button>
                         <button type="button" class="btn btn-outline-danger mt-2 w-100"
                             id="profile-clear-btn">Cencel</button>
                     </form>
