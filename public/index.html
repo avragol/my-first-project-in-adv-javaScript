@@ -71,7 +71,8 @@
                 <h1 class="display-4 mt-1 text-center">Home page</h1>
                 <h3 class="text-center">A World of Stunning Images at Your Fingertips</h3>
                 <!-- Carousel -->
-                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselExampleCaptions" class="carousel slide me-auto ms-auto d-block"
+                    data-bs-ride="carousel">
                     <div class="carousel-inner" id="carouselPics">
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
@@ -86,8 +87,22 @@
                     </button>
                 </div>
                 <!-- Cards -->
-                <div class="d-flex flex-wrap justify-content-center justify-content-md-between" id="cardsPics">
+                <div class="d-flex flex-wrap justify-content-center justify-content-md-between d-none" id="cardsPics">
                 </div>
+                <!-- Table -->
+                <table class="table d-none">
+                    <thead>
+                        <tr id="head-row-table">
+                            <th scope="col">No.</th>
+                            <th scope="col">image</th>
+                            <th scope="col">Pic.</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Credit</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider" id="table-rows-cards">
+                    </tbody>
+                </table>
             </div>
             <!-- login page -->
             <div id="login-page" class="d-none">
