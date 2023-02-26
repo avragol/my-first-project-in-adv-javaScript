@@ -38,4 +38,9 @@ nav #mainMenu {
 }
 #login-page .lead {
   font-size: 0.9rem !important;
+}
+
+.carousel-caption {
+  border-radius: 8%;
+  background-color: rgba(0, 0, 0, 0.6588235294);
 }/*# sourceMappingURL=index.css.map */
