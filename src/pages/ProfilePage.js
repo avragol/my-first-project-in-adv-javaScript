@@ -1,12 +1,10 @@
-import PAGES from "../models/PageModel.js";
-import { switchPage } from "../routes/router.js";
-import User from "../models/User.js";
-import UserAddress from "../models/UserAddress.js";
+/*IMPORTS*/
 import validateName from "../validation/validateName.js";
 import validatePassword from "../validation/validatePassword.js";
 import validateEmail from "../validation/validateEmail.js";
 import checkInput from "../utils/checkInput.js";
 
+/* SET ELEMNTS TO VARIBELS */
 const PROFILEPROFILEFORM = document.getElementById("profile-form");
 const PROFILESAVEBTN = document.getElementById("profile-save-btn");
 const PROFILECLEARBTN = document.getElementById("profile-clear-btn");
@@ -21,18 +19,22 @@ const PROFILEALERTREPASSWORD = document.getElementById("profile-alert-rePassword
 const PROFILEALERTFIRSTNAME = document.getElementById("profile-alert-firstName");
 const PROFILEALERTLASTNAME = document.getElementById("profile-alert-lastName");
 
+/* set varible that will contain the user who connected */
 let userToken;
 
+/* set boolean varibels that holds true if the validation is correct */
 let firstNameOk;
 let lastNameOk;
 let emailOk;
 let passwordOk;
 let rePasswordOk = true;
 
+/* function that  able the edit btn if everythings is in right place*/
 const checkIfCanAbledBtn = () => {
     PROFILESAVEBTN.disabled = (!(firstNameOk && lastNameOk && emailOk && passwordOk && rePasswordOk));
 }
 
+/* when the page load, set the form with all usre deatels ,and do the validation for inputs that have a value */
 window.addEventListener("load", () => {
     userToken = JSON.parse(localStorage.getItem("userToken"));
     if (!userToken) {
@@ -60,7 +62,7 @@ window.addEventListener("load", () => {
     checkIfCanAbledBtn();
 })
 
-
+/* do validation for every required inputs when typing in them */
 PROFILEINPUTFIRSTNAME.addEventListener("input", () => {
     firstNameOk = checkInput(PROFILEINPUTFIRSTNAME, PROFILEALERTFIRSTNAME, validateName(PROFILEINPUTFIRSTNAME.value), "First name");
     checkIfCanAbledBtn();
@@ -83,6 +85,7 @@ PROFILEINPUTREPASSWORD.addEventListener("input", () => {
     checkIfCanAbledBtn();
 })
 
+//function that will only be activated if there is a change in the password or in rePassword. Otherwise the user does not want to change the password
 const checkRePassword = () => {
     if (PROFILEINPUTREPASSWORD.value === PROFILEINPUTPASSWORD.value) {
         PROFILEINPUTREPASSWORD.classList.remove("is-invalid");
@@ -95,13 +98,18 @@ const checkRePassword = () => {
     }
 }
 
+/* edit the connected user by the new values when the user click on the save btn */
 PROFILESAVEBTN.addEventListener("click", () => {
     if (!(firstNameOk && lastNameOk && emailOk && passwordOk && rePasswordOk)) {
+        //if someone try to able the btn from devTool
         return;
     }
+    //get the users array from local storge
     let usersArr = JSON.parse(localStorage.getItem("users"));
+    //catch the connected user
     for (let user of usersArr) {
         if (user.userId === userToken.userId) {
+            //update the deatels by the form
             user.firstName = PROFILEINPUTFIRSTNAME.value;
             user.lastName = PROFILEINPUTLASTNAME.value;
             user.address.stste = document.getElementById("profile-input-state").value;
@@ -114,13 +122,16 @@ PROFILESAVEBTN.addEventListener("click", () => {
             user.password = PROFILEINPUTPASSWORD.value;
             user.phone = document.getElementById("profile-input-phone").value;
             user.isAdmin = document.getElementById("profile-input-isAdmin").checked;
-
+            //save the edited user to "userToken" in local storge.
             localStorage.setItem("userToken", JSON.stringify(user));
         }
     }
+    //save the edited array to "users" in local storge
     localStorage.setItem("users", JSON.stringify(usersArr));
+    //refresh (and back to home page)
     location.reload();
 });
 
+//when the user click on cencel btn, refresh(and back to home page)
 PROFILECLEARBTN.addEventListener("click", () => { location.reload() });
 
