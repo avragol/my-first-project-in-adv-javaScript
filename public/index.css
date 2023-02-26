@@ -43,4 +43,19 @@ nav #mainMenu {
 .carousel-caption {
   border-radius: 8%;
   background-color: rgba(0, 0, 0, 0.6588235294);
+}
+
+#carouselExampleCaptions {
+  width: 50vw;
+}
+@media (max-width: 767px) {
+  #carouselExampleCaptions {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  #carouselExampleCaptions .carousel-caption {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0 !important;
+  }
 }/*# sourceMappingURL=index.css.map */

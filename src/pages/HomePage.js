@@ -1,6 +1,6 @@
 import initialCarousel from "../components/Carousel.js";
 import initialCards from "../components/PicsCards.js";
-
+import initialTable from "../components/PicsTable.js";
 import checkIfAdmin from "../utils/checkIfAdmin.js";
 
 
@@ -10,6 +10,7 @@ let isAdmin;
 
 window.addEventListener("load", () => {
     isAdmin = checkIfAdmin();
-    //initialCarousel(picsArr);
+    initialCarousel(picsArr);
     initialCards(picsArr, isAdmin);
+    initialTable(picsArr, isAdmin);
 })
