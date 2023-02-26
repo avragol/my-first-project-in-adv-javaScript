@@ -8,6 +8,7 @@ const GALLERYDIV = document.getElementById("cardsPics")
 const LISTDIV = document.getElementById("tablePics")
 
 let picsArr = JSON.parse(localStorage.getItem("pics"));
+let newPicsArr;
 let isAdmin;
 
 
@@ -45,3 +46,22 @@ document.getElementById("galleryBtn").addEventListener("click", () => {
 document.getElementById("listBtn").addEventListener("click", () => {
     swicthDisplay(LISTDIV);
 });
+
+const updateDisplays = (newPicsArrParm) => {
+    initialCarousel(newPicsArrParm);
+    initialCards(newPicsArrParm, isAdmin);
+    initialTable(newPicsArrParm, isAdmin);
+};
+
+const sortPics = (asc = true) => {
+    newPicsArr = [...picsArr];
+    if (asc) {
+        newPicsArr.sort((a, b) => a.title.localeCompare(b.title));//from a to z
+    } else {
+        newPicsArr.sort((a, b) => b.title.localeCompare(a.title));//from z to a
+    }
+    updateDisplays(newPicsArr);
+};
+
+document.getElementById("sortAscBtn").addEventListener("click", sortPics);
+document.getElementById("sortDescBtn").addEventListener("click", () => { sortPics(false) });
