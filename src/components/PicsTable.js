@@ -10,6 +10,14 @@ const initialTable = (picsArrFromHomePage, isAdminFromHomePage) => {
     createTablePics();
 };
 
+window.addEventListener("load", () => {
+    if (isAdmin) {
+        HEADROWTABLE.innerHTML += `
+         <th scope="col">Edit</th>
+        <th scope="col">Delete</th>`;
+    }
+})
+
 const createRowItem = (isAdmin, picId, url, alt, title, credit, number) => {
     return `
     <tr>
@@ -32,11 +40,6 @@ const initialAdminBtns = (picId) => {
 }
 
 const createTablePics = () => {
-    if (isAdmin) {
-        HEADROWTABLE.innerHTML += `
-         <th scope="col">Edit</th>
-        <th scope="col">Delete</th>`;
-    }
     let innerStr = "";
     let number = 1;
     for (let pic of picsArr) {
