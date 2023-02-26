@@ -71,13 +71,16 @@
                 <h1 class="display-4 mt-1 text-center">Home page</h1>
                 <h3 class="text-center">A World of Stunning Images at Your Fingertips</h3>
                 <div class="d-flex gap-2 mb-3 mt-3" id="displayBtns">
-                    <button class="btn btn-outline-primary flex-grow-1"><i class="bi bi-collection-play-fill"></i>
+                    <button class="btn btn-outline-primary flex-grow-1" id="carouselBtn"><i
+                            class="bi bi-collection-play-fill"></i>
                         Carousel</button>
-                    <button class="btn btn-outline-primary flex-grow-1"><i class="bi bi-images"></i> Gallery</button>
-                    <button class="btn btn-outline-primary flex-grow-1"><i class="bi bi-list-task"></i> List</button>
+                    <button class="btn btn-outline-primary flex-grow-1" id="galleryBtn"><i class="bi bi-images"></i>
+                        Gallery</button>
+                    <button class="btn btn-outline-primary flex-grow-1" id="listBtn"><i class="bi bi-list-task"></i>
+                        List</button>
                 </div>
                 <!-- Carousel -->
-                <div id="carouselExampleCaptions" class="carousel slide me-auto ms-auto d-block"
+                <div id="carouselExampleCaptions" class="dis carousel slide me-auto ms-auto d-block"
                     data-bs-ride="carousel">
                     <div class="carousel-inner" id="carouselPics">
                     </div>
@@ -93,10 +96,11 @@
                     </button>
                 </div>
                 <!-- Cards -->
-                <div class="d-flex flex-wrap justify-content-center justify-content-md-between d-none" id="cardsPics">
+                <div class="dis d-flex flex-wrap justify-content-center justify-content-md-between d-none"
+                    id="cardsPics">
                 </div>
                 <!-- Table -->
-                <table class="table d-none">
+                <table class="dis table d-none" id="tablePics">
                     <thead>
                         <tr id="head-row-table">
                             <th scope="col">No.</th>
