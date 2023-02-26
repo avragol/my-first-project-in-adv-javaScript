@@ -58,4 +58,25 @@ nav #mainMenu {
     padding-top: 0.25rem !important;
     padding-bottom: 0 !important;
   }
+}
+
+#filtersBtns {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease-out;
+}
+#filtersBtns .displayMe {
+  height: 200px;
+}
+#filtersBtns .hideMe {
+  animation: dropDown ease-in-out 1s reverse forwards;
+}
+
+@keyframes dropDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100px;
+  }
 }/*# sourceMappingURL=index.css.map */

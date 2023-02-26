@@ -17,3 +17,28 @@
         }
     }
 }
+
+#filtersBtns {
+
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-out;
+
+    .displayMe {
+        height: 200px;
+    }
+
+    .hideMe {
+        animation: dropDown ease-in-out 1s reverse forwards;
+    }
+}
+
+@keyframes dropDown {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 100px;
+    }
+}

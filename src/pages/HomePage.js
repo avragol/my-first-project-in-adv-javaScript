@@ -19,6 +19,11 @@ window.addEventListener("load", () => {
 })
 
 const swicthDisplay = (choosenDisplay) => {
+    if (choosenDisplay === GALLERYDIV || choosenDisplay === LISTDIV) {
+        document.getElementById("filtersBtns").style.height = "2.357rem";
+    } else {
+        document.getElementById("filtersBtns").style.height = "0";
+    }
     let displaysArr = document.querySelectorAll(".dis");
     for (let display of displaysArr) {
         if (display === choosenDisplay) {
