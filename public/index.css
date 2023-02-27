@@ -131,4 +131,18 @@ td a {
 }
 .popup-wrapper #deletePopup .d-flex {
   gap: 1rem;
+}
+.popup-wrapper #editPopup {
+  padding: 2rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  width: 40%;
+  border-radius: 8%;
+}
+.popup-wrapper #editPopup #previewImgContain {
+  display: flex;
+  justify-content: center;
+}
+.popup-wrapper #editPopup #previewImgContain img {
+  width: 50%;
 }/*# sourceMappingURL=index.css.map */

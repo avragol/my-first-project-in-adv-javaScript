@@ -15,7 +15,6 @@
         padding: 3rem;
         padding-top: 0;
         width: 50%;
-        ;
 
         @include breakpointMd {
             width: 95%;
@@ -36,6 +35,23 @@
 
         .d-flex {
             gap: 1rem;
+        }
+    }
+
+    #editPopup {
+        padding: 2rem;
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 40%;
+        border-radius: 8%;
+
+        #previewImgContain {
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 50%;
+            }
         }
     }
 }

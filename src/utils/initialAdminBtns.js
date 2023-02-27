@@ -1,4 +1,4 @@
-import initialDeletePopup from "../pages/HomePage.js";
+import { initialDeletePopup, initialEditPopup } from "../pages/HomePage.js";
 
 //this func get and return the id of the clicked btn
 const getIdFromClick = (ev) => {
@@ -21,10 +21,17 @@ const createBtnEventListener = () => {
     for (let btn of deleteBtns) {
         btn.addEventListener("click", deletePic);
     }
+    for (let btn of editBtns) {
+        btn.addEventListener("click", editPic);
+    }
 };
 
 const deletePic = (ev) => {
     initialDeletePopup(getIdFromClick(ev));
+}
+
+const editPic = (ev) => {
+    initialEditPopup(getIdFromClick(ev))
 }
 
 export default createBtnEventListener;

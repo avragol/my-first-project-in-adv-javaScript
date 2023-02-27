@@ -15,7 +15,7 @@ let altOk;
 const initialAddNewPicPopup = () => {
     POPUPCONTAINER.classList.remove("d-none");
     POPUPCONTAINER.innerHTML = `
-        <div class="" id="addNewPicPopup">
+        <div id="addNewPicPopup">
                     <button type="button" class="btn-close ms-" aria-label="Close" id="closeAddPopup"></button>
                     <h2 class="display-6">Add your wonderful picture!</h2>
                     <h4 class="h6">Fill in your photo details and let the talent burst out</h4>
@@ -38,7 +38,7 @@ const initialAddNewPicPopup = () => {
                         </div>
                         <div class="mb-1">
                             <label for="image-alt" class="form-label">Alt Text <div class="d-inline text-danger" id="add-alert-alt"></div></label>
-                            <input type="text" class="form-control" id="add-input-alt" name="image-alt" placeholder="up to 20 characters" required>
+                            <input type="text" class="form-control" id="add-input-alt" name="image-alt" placeholder="(up to 20 characters)" required>
                         </div>
                         <button type="buttom" class="btn btn-outline-primary w-100 mb-2" disabled="true" id="addPicBtn">Submit</button>
                         <button type="buttom" class="btn btn-outline-danger w-100" id="cencelAddPopup">Cancel</button>
