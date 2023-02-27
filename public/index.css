@@ -89,4 +89,14 @@ nav #mainMenu {
   .card {
     flex-basis: 100%;
   }
+}
+
+.popup-wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5529411765);
+  top: 0;
+  left: 0;
+  z-index: 999;
 }/*# sourceMappingURL=index.css.map */
