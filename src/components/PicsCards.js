@@ -11,7 +11,7 @@ const initialCards = (picsArrFromHomePage, isAdminFromHomePage) => {
 
 const createCardItem = (isAdmin, url, alt, title, credit, price, picId) => {
     return `
-    <div class="card m-2 p-2" style="width: 18rem;">
+    <div class="card p-2" style="width: 18rem;">
                         <img src="${url}" class="card-img-top"
                             alt="${alt}">
                         <div class="card-body">

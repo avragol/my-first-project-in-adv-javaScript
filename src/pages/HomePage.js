@@ -65,3 +65,10 @@ const sortPics = (asc = true) => {
 
 document.getElementById("sortAscBtn").addEventListener("click", sortPics);
 document.getElementById("sortDescBtn").addEventListener("click", () => { sortPics(false) });
+
+document.getElementById("searchPicInput").addEventListener("input", (ev) => {
+    newPicsArr = picsArr.filter((pic) => pic.title.toLowerCase().includes(ev.target.value.toLowerCase()));
+    updateDisplays(newPicsArr);
+});
+
+

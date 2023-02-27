@@ -79,4 +79,14 @@ nav #mainMenu {
   to {
     height: 100px;
   }
+}
+.card {
+  flex-basis: calc(33.33% - 10px);
+  align-self: center;
+  margin: 5px;
+}
+@media (max-width: 767px) {
+  .card {
+    flex-basis: 100%;
+  }
 }/*# sourceMappingURL=index.css.map */

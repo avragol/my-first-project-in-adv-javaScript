@@ -42,3 +42,13 @@
         height: 100px;
     }
 }
+
+.card {
+    flex-basis: calc(33.33% - 10px);
+    align-self: center;
+    margin: 5px;
+
+    @include breakpointMd {
+        flex-basis: 100%;
+    }
+}
