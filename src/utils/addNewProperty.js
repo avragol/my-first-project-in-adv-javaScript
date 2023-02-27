@@ -1,7 +1,7 @@
 import validateUrl from "../validation/validateUrl.js";
 import validateTitle from "../validation/validateTitle.js";
 import validateName from "../validation/validateName.js";
-import checkInput from "../utils/checkInput.js";
+import checkInput from "./checkInput.js";
 import Picture from "../models/Picture.js"
 
 const POPUPCONTAINER = document.getElementById("modularPopup");

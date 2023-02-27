@@ -1,6 +1,6 @@
 import PAGES from "../models/PageModel.js";
 import { switchPage } from "../routes/router.js";
-import initialAddNewPicPopup from "./AddNewProperty.js";
+import initialAddNewPicPopup from "../utils/addNewProperty.js";
 
 const HOMEMENULINK = document.getElementById("home-page-link");
 const LOGINMENULINK = document.getElementById("login-page-link");

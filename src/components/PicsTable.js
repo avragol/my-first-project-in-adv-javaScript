@@ -2,6 +2,7 @@
 let picsArr;
 let isAdmin;
 
+
 /* set the table and head of table elements */
 const TABLEROWSPICS = document.getElementById("table-rows-cards");
 const HEADROWTABLE = document.getElementById("head-row-table");
@@ -31,8 +32,8 @@ const createRowItem = (isAdmin, picId, url, alt, title, credit, number) => {
 //that function run from createRowItem() and return the HTML for admin btns
 const initialAdminBtns = (picId) => {
     return `
-        <td><a herf="#" id="editBtn-${picId}"><i class="bi bi-pencil-square"></i></a></td>
-        <td><a herf="#" id="deleteBtn-${picId}"><i class="bi bi-trash3-fill"></i></a></td>
+        <td><a id="editBtnTable-${picId}"><i class="bi bi-pencil-square"></i></a></td>
+        <td><a id="deleteBtnTable-${picId}"><i class="bi bi-trash3-fill"></i></a></td>
 `
 }
 

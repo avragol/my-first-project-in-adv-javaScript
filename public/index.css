@@ -91,6 +91,10 @@ nav #mainMenu {
   }
 }
 
+td a {
+  cursor: pointer;
+}
+
 .popup-wrapper {
   position: fixed;
   width: 100vw;
@@ -100,11 +104,13 @@ nav #mainMenu {
   left: 0;
   z-index: 999;
 }
+.popup-wrapper div {
+  background-color: aliceblue;
+}
 .popup-wrapper #addNewPicPopup {
   padding: 3rem;
   padding-top: 0;
   width: 50%;
-  background-color: aliceblue;
 }
 @media (max-width: 767px) {
   .popup-wrapper #addNewPicPopup {
@@ -119,4 +125,10 @@ nav #mainMenu {
   .popup-wrapper #addNewPicPopup .btn-close {
     margin-left: 0;
   }
+}
+.popup-wrapper #deletePopup {
+  padding: 3rem;
+}
+.popup-wrapper #deletePopup .d-flex {
+  gap: 1rem;
 }/*# sourceMappingURL=index.css.map */
