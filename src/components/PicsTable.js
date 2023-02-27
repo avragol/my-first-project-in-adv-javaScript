@@ -13,24 +13,33 @@ const initialTable = (picsArrFromHomePage, isAdminFromHomePage) => {
     createTablePics();
 };
 
-//when page load, if the connected user is admin' add more colums to the table
+//when page load, if the media is mobile' the colum "pic" will hide, and if the connected user is admin' add more colums to the table
 window.addEventListener("load", () => {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        HEADROWTABLE.innerHTML = `
+            <th scope="col">No.</th>
+            <th scope="col">image</th>
+            <th scope="col">Title</th>
+            <th scope="col">Credit</th>
+        `
+    }
     if (isAdmin) {
         HEADROWTABLE.innerHTML += `
-         <th scope="col">Edit</th>
+        <th scope="col">Edit</th>
         <th scope="col">Delete</th>`;
     }
 })
 
 //the function return HTML code for one row by the parameters
 const createRowItem = (isAdmin, picId, url, alt, title, credit, number) => {
+    //the url will display only on desktop
     return `
     <tr>
         <th scope="row">${number}</th>
         <td><img src="${url}" alt="${alt}"
                 width="75rem"></td>
-        <td>"${url}"</td>
-        <td>${title}</td>
+        <td>"${title}"</td>
+        ${window.matchMedia("(max-width: 768px)").matches ? "" : "<td>${url}</td>"}
         <td>${credit}</td>
         ${isAdmin ? initialAdminBtns(picId) : ""}
     </tr>
