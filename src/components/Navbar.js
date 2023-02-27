@@ -6,7 +6,7 @@ const LOGINMENULINK = document.getElementById("login-page-link");
 const REGISTERMENULINK = document.getElementById("register-page-link");
 const PROFILEMENULINK = document.getElementById("profile-page-link");
 const LOGOUTMENULINK = document.getElementById("log-out-link");
-const ADMINOPTIONLINK = document.getElementById("admin-option-link");
+const ADDPICLINK = document.getElementById("add-pic-link");
 
 HOMEMENULINK.addEventListener("click", () => { switchPage(PAGES.HOME) });
 LOGINMENULINK.addEventListener("click", () => { switchPage(PAGES.LOGIN) });
@@ -26,7 +26,7 @@ window.addEventListener("load", () => {
     } else {
         PROFILEMENULINK.classList.remove("d-none");
         LOGOUTMENULINK.classList.remove("d-none");
+        ADDPICLINK.classList.remove("d-none");
         PROFILEMENULINK.innerHTML = `<u>${userToken.firstName} ${userToken.lastName}</u>`
-        if (userToken.isAdmin) { ADMINOPTIONLINK.classList.remove("d-none"); }
     }
 })
