@@ -1,5 +1,6 @@
 import PAGES from "../models/PageModel.js";
 import { switchPage } from "../routes/router.js";
+import initialAddNewPicPopup from "./AddNewProperty.js";
 
 const HOMEMENULINK = document.getElementById("home-page-link");
 const LOGINMENULINK = document.getElementById("login-page-link");
@@ -16,6 +17,7 @@ LOGOUTMENULINK.addEventListener("click", () => {
     localStorage.removeItem("userToken");
     location.reload();
 });
+ADDPICLINK.addEventListener("click", initialAddNewPicPopup);
 
 window.addEventListener("load", () => {
     let userToken = JSON.parse(localStorage.getItem("userToken"));
