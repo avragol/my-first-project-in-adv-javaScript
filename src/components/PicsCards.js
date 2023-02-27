@@ -17,7 +17,7 @@ const createCardItem = (isAdmin, url, alt, title, credit, price, picId) => {
     return `
     <div class="card p-2" style="width: 18rem;">
                         <img src="${url}" class="card-img-top"
-                            alt="${alt}">
+                            alt="${alt}" height="300">
                         <div class="card-body">
                             <h5 class="card-title">${title}</h5>
                             <p class="card-text">Picture by ${credit}.</p>

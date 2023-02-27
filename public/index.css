@@ -102,13 +102,21 @@ nav #mainMenu {
 }
 .popup-wrapper #addNewPicPopup {
   padding: 3rem;
-  padding-top: 1rem;
+  padding-top: 0;
   width: 50%;
   background-color: aliceblue;
 }
 @media (max-width: 767px) {
   .popup-wrapper #addNewPicPopup {
     width: 95%;
-    padding: 1.5rem;
+    padding: 0.5rem;
+  }
+}
+.popup-wrapper #addNewPicPopup .btn-close {
+  margin-left: -2rem;
+}
+@media (max-width: 767px) {
+  .popup-wrapper #addNewPicPopup .btn-close {
+    margin-left: 0;
   }
 }/*# sourceMappingURL=index.css.map */

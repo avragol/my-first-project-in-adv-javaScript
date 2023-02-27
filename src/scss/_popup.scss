@@ -9,13 +9,21 @@
 
     #addNewPicPopup {
         padding: 3rem;
-        padding-top: 1rem;
+        padding-top: 0;
         width: 50%;
         background-color: aliceblue;
 
         @include breakpointMd {
             width: 95%;
-            padding: 1.5rem;
+            padding: 0.5rem;
+        }
+
+        .btn-close {
+            margin-left: -2rem;
+
+            @include breakpointMd {
+                margin-left: 0;
+            }
         }
     }
 }
