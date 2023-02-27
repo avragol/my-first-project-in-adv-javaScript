@@ -1,12 +1,16 @@
+/* Set varible tht will contain the picture array */
 let picsArr;
 
+/* set the carosel elemnt */
 const CAROUSELPICS = document.getElementById("carouselPics")
 
+/* init the carousel by information from home page (the func is exported to home pagק and run from there) */
 const initialCarousel = (picsArrFromHomePage) => {
     picsArr = picsArrFromHomePage;
     createCarousel();
 }
 
+//the function return HTML code for one carousel item by the parameters
 const createCarouselItem = (active, url, title, credit, alt) => {
     return `
                         <div class="carousel-item ${active ? "active" : ""}" data-bs-interval="5000">
@@ -20,6 +24,7 @@ const createCarouselItem = (active, url, title, credit, alt) => {
     `
 }
 
+//the function passes through the array and for every picture build html elemnt into the carousel
 const createCarousel = () => {
     let innerStr = "";
     let active = true;

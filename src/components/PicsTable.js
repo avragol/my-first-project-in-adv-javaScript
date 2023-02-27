@@ -1,15 +1,19 @@
+/* Set varible tht will contain the picture array and boolean varible that will contain if the connected user is admin */
 let picsArr;
 let isAdmin;
 
+/* set the table and head of table elements */
 const TABLEROWSPICS = document.getElementById("table-rows-cards");
 const HEADROWTABLE = document.getElementById("head-row-table");
 
+/* init the table by information from home page (the func is exported to home pagק and run from there) */
 const initialTable = (picsArrFromHomePage, isAdminFromHomePage) => {
     picsArr = picsArrFromHomePage;
     isAdmin = isAdminFromHomePage;
     createTablePics();
 };
 
+//when page load, if the connected user is admin' add more colums to the table
 window.addEventListener("load", () => {
     if (isAdmin) {
         HEADROWTABLE.innerHTML += `
@@ -18,6 +22,7 @@ window.addEventListener("load", () => {
     }
 })
 
+//the function return HTML code for one row by the parameters
 const createRowItem = (isAdmin, picId, url, alt, title, credit, number) => {
     return `
     <tr>
@@ -32,6 +37,7 @@ const createRowItem = (isAdmin, picId, url, alt, title, credit, number) => {
     `
 }
 
+//that function run from createRowItem() and return the HTML for admin btns
 const initialAdminBtns = (picId) => {
     return `
     <td><a herf="#" id="editBtn-${picId}"><i class="bi bi-pencil-square"></i></a></td>
@@ -39,6 +45,7 @@ const initialAdminBtns = (picId) => {
     `
 }
 
+//the function passes through the array and for every picture build html elemnt into the table
 const createTablePics = () => {
     let innerStr = "";
     let number = 1;
