@@ -45,9 +45,9 @@ const createCardsGallery = () => {
 //that function run from createCardItem() and return the HTML for admin btns
 const initialAdminBtns = (picId) => {
     return `
-    <a href="#" class="btn btn-warning text-center" id="editBtnGallery-${picId}">Edit</a>
-    <a href="#" class="btn btn-danger text-center" id="deleteBtnGallery-${picId}">Delete</a>
+    <buttom class="btn btn-warning text-center" id="editBtnGallery-${picId}">Edit</buttom>
+    <buttom class="btn btn-danger text-center" id="deleteBtnGallery-${picId}">Delete</buttom>
     `
 }
 
-export default initialCards;
+export { initialCards, createCardItem };

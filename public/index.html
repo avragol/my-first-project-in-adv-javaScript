@@ -59,280 +59,290 @@
             <!-- Popup -->
             <div class="popup-wrapper d-flex justify-content-center align-items-center d-none" id="modularPopup">
             </div>
-    </div>
-    <!-- home page -->
-    <div id="home-page" class="d-block">
-        <h1 class="display-4 mt-1 text-center">Home page</h1>
-        <h3 class="text-center">A World of Stunning Images at Your Fingertips</h3>
-        <div class="d-flex gap-2 mb-3 mt-3" id="displayBtns">
-            <button class="btn btn-outline-primary flex-grow-1" id="carouselBtn"><i
-                    class="bi bi-collection-play-fill"></i>
-                Carousel</button>
-            <button class="btn btn-outline-primary flex-grow-1" id="galleryBtn"><i class="bi bi-images"></i>
-                Gallery</button>
-            <button class="btn btn-outline-primary flex-grow-1" id="listBtn"><i class="bi bi-list-task"></i>
-                List</button>
-        </div>
-        <div class="d-flex gap-2 mb-3 mt-3" id="filtersBtns">
-            <button class="btn btn-outline-primary flex-grow-1" id="sortAscBtn">
-                <i class="bi bi-sort-alpha-down"></i> Sort A-Z</button>
-            <button class="btn btn-outline-primary flex-grow-1" id="sortDescBtn">
-                <i class="bi bi-sort-alpha-down-alt"></i> Sort Z-A</button>
-            <input type="text" class="form-control w-50" placeholder="Search" id="searchPicInput">
-            </input>
-        </div>
-        <!-- Carousel -->
-        <div id="carouselExampleCaptions" class="dis carousel slide me-auto ms-auto d-block" data-bs-ride="carousel">
-            <div class="carousel-inner" id="carouselPics">
+            <!-- home page -->
+            <div id="home-page" class="d-block">
+                <h1 class="display-4 mt-1 text-center">Home page</h1>
+                <h3 class="text-center">A World of Stunning Images at Your Fingertips</h3>
+                <div class="d-flex gap-2 mb-3 mt-3" id="displayBtns">
+                    <button class="btn btn-outline-primary flex-grow-1" id="carouselBtn"><i
+                            class="bi bi-collection-play-fill"></i>
+                        Carousel</button>
+                    <button class="btn btn-outline-primary flex-grow-1" id="galleryBtn"><i class="bi bi-images"></i>
+                        Gallery</button>
+                    <button class="btn btn-outline-primary flex-grow-1" id="listBtn"><i class="bi bi-list-task"></i>
+                        List</button>
+                </div>
+                <div class="d-flex gap-2 mb-3 mt-3" id="filtersBtns">
+                    <button class="btn btn-outline-primary flex-grow-1" id="sortAscBtn">
+                        <i class="bi bi-sort-alpha-down"></i> Sort A-Z</button>
+                    <button class="btn btn-outline-primary flex-grow-1" id="sortDescBtn">
+                        <i class="bi bi-sort-alpha-down-alt"></i> Sort Z-A</button>
+                    <input type="text" class="form-control w-50" placeholder="Search" id="searchPicInput">
+                    </input>
+                </div>
+                <!-- Carousel -->
+                <div id="carouselExampleCaptions" class="dis carousel slide me-auto ms-auto d-block"
+                    data-bs-ride="carousel">
+                    <div class="text-center mb-2">
+                        <h5>Welcome to our pictures zone</h5>
+                        <h6>Press on some picture or switch to other display for more deatels</h6>
+                    </div>
+                    <div class="carousel-inner" id="carouselPics">
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <!-- Cards -->
+                <div class="dis d-flex flex-wrap d-none" id="cardsPics">
+                </div>
+                <!-- Table -->
+                <table class="dis table mx-auto d-none" id="tablePics">
+                    <thead>
+                        <tr id="head-row-table">
+                            <th scope="col">No.</th>
+                            <th scope="col">image</th>
+                            <th scope="col">Pic.</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Credit</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider" id="table-rows-cards">
+                    </tbody>
+                </table>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-        <!-- Cards -->
-        <div class="dis d-flex flex-wrap d-none" id="cardsPics">
-        </div>
-        <!-- Table -->
-        <table class="dis table d-none" id="tablePics">
-            <thead>
-                <tr id="head-row-table">
-                    <th scope="col">No.</th>
-                    <th scope="col">image</th>
-                    <th scope="col">Pic.</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Credit</th>
-                </tr>
-            </thead>
-            <tbody class="table-group-divider" id="table-rows-cards">
-            </tbody>
-        </table>
-    </div>
-    <!-- login page -->
-    <div id="login-page" class="d-none">
-        <h1 class="display-4 mt-1 text-center">Login page</h1>
-        <h3 class="text-center">Welcome back! Log in to continue your journey.</h3>
-        <form class="bg-primary-subtle p-4 mt-3 rounded position-relative start-50 translate-middle-x w-mb-50"
-            id="login-form">
-            <label for="email">Email<span class="text-danger">*</span>
-                <div class="d-inline text-danger" id="login-alert-email"></div>
-            </label>
-            <input type="email" class="form-control" id="login-input-email">
-            <label for="password">Password<span class="text-danger">*</span>
-                <div class="d-inline text-danger" id="login-alert-password"></div>
-            </label>
-            <input type="password" class="form-control mb-1" id="login-input-password">
-            <small class="text-muted lead">Not a member yet? <a href="#" id="takeFromLogToSign">Join now
-                </a></small>
-            <button type="button" class="btn btn-outline-primary mt-2 w-100" disabled="true" id="login-btn">Log
-                in!</button>
-            <div class="text-danger" id="login-alert"></div>
-        </form>
+            <!-- login page -->
+            <div id="login-page" class="d-none">
+                <h1 class="display-4 mt-1 text-center">Login page</h1>
+                <h3 class="text-center">Welcome back! Log in to continue your journey.</h3>
+                <form class="bg-primary-subtle p-4 mt-3 rounded position-relative start-50 translate-middle-x w-mb-50"
+                    id="login-form">
+                    <label for="email">Email<span class="text-danger">*</span>
+                        <div class="d-inline text-danger" id="login-alert-email"></div>
+                    </label>
+                    <input type="email" class="form-control" id="login-input-email">
+                    <label for="password">Password<span class="text-danger">*</span>
+                        <div class="d-inline text-danger" id="login-alert-password"></div>
+                    </label>
+                    <input type="password" class="form-control mb-1" id="login-input-password">
+                    <small class="text-muted lead">Not a member yet? <a href="#" id="takeFromLogToSign">Join now
+                        </a></small>
+                    <button type="button" class="btn btn-outline-primary mt-2 w-100" disabled="true" id="login-btn">Log
+                        in!</button>
+                    <div class="text-danger" id="login-alert"></div>
+                </form>
 
-    </div>
-    <!-- Register page -->
-    <div id="register-page" class="d-none">
-        <h1 class="display-4 mt-1 text-center">Register page</h1>
-        <h3 class="text-center">Start your journey by creating an account</h2>
-            <form class="bg-primary-subtle p-4 rounded" id="register-form">
-                <div class="form-group">
-                    <label for="name" class="fw-bold">Name:</label>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="firstName">First name<span class="text-danger">*</span>
-                                <div class="d-inline text-danger" id="register-alert-firstName"></div>
-                            </label>
-                            <input type="text" class="form-control" id="register-input-firstName">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="lastName">Last name<span class="text-danger">*</span>
-                                <div class="d-inline text-danger" id="register-alert-lastName"></div>
-                            </label>
-                            <input type="text" class="form-control" id="register-input-lastName">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group mt-2">
-                    <label for="address" class="fw-bold">Address:</label>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label for="state">State</label>
-                            <input type="text" class="form-control" maxlength="20" id="register-input-state">
-                        </div>
-                        <div class="col-md-4">
-                            <label for="city">City</label>
-                            <input type="text" class="form-control" maxlength="20" id="register-input-city">
-                        </div>
-                        <div class="col-md-4">
-                            <label for="country">Country</label>
-                            <input type="text" class="form-control" maxlength="20" id="register-input-country">
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md-6">
-                            <label for="street">Street</label>
-                            <input type="text" class="form-control" maxlength="20" id="register-input-street">
-                        </div>
-                        <div class="col-md-3">
-                            <label for="houseNumber">House number</label>
-                            <input type="number" class="form-control" maxlength="5" id="register-input-houseNumber">
-                        </div>
-                        <div class="col-md-3">
-                            <label for="zipCode">Zip code</label>
-                            <input type="text" class="form-control" maxlength="10" id="register-input-zipCode">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group mt-2">
-                    <label for="meansOfCash" class="fw-bold">Means of contact:</label>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="email">Email<span class="text-danger">*</span>
-                                <div class="d-inline text-danger" id="register-alert-email"></div>
-                            </label>
-                            <input type="email" class="form-control" id="register-input-email">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="phone">Phone</label>
-                            <input type="tel" class="form-control" maxlength="15" id="register-input-phone">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group mt-2">
-                    <label for="security" class="fw-bold">Security:</label>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="password">Password<span class="text-danger">*</span>
-                                <div class="d-inline text-danger" id="register-alert-password"></div>
-                            </label>
-                            <input type="password" class="form-control" id="register-input-password">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="reEnterPassword">Re-enter password<span class="text-danger">*</span>
-                                <div class="d-inline text-danger d-none" id="register-alert-rePassword">No match
+            </div>
+            <!-- Register page -->
+            <div id="register-page" class="d-none">
+                <h1 class="display-4 mt-1 text-center">Register page</h1>
+                <h3 class="text-center">Start your journey by creating an account</h2>
+                    <form class="bg-primary-subtle p-4 rounded" id="register-form">
+                        <div class="form-group">
+                            <label for="name" class="fw-bold">Name:</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="firstName">First name<span class="text-danger">*</span>
+                                        <div class="d-inline text-danger" id="register-alert-firstName"></div>
+                                    </label>
+                                    <input type="text" class="form-control" id="register-input-firstName">
                                 </div>
-                            </label>
-                            <input type="password" class="form-control" id="register-input-rePassword">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-check mt-3 d-flex justify-content-center">
-                    <input class="form-check-input me-1" type="checkbox" value="" id="register-input-isAdmin">
-                    <label class="form-check-label ms-1" for="flexCheckDefault">
-                        Admin user
-                    </label>
-                </div>
-                <button type="button" class="btn btn-outline-primary mt-3 w-100" disabled="true" id="register-btn">Sign
-                    Up!</button>
-                <button type="button" class="btn btn-outline-warning mt-2 w-100 text-secondary"
-                    id="register-clear-btn">Clear
-                    all</button>
-            </form>
-    </div>
-    <!-- Profile page -->
-    <div id="profile-page" class="d-none">
-        <h1 class="display-4 mt-1 text-center">Profile page</h1>
-        <h3 class="text-center">Navigate your journey: Manage your account information</h2>
-            <form class="bg-primary-subtle p-4 rounded" id="profile-form">
-                <div class="form-group">
-                    <label for="name" class="fw-bold">Name:</label>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="firstName">First name<span class="text-danger">*</span>
-                                <div class="d-inline text-danger" id="profile-alert-firstName"></div>
-                            </label>
-                            <input type="text" class="form-control" id="profile-input-firstName">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="lastName">Last name<span class="text-danger">*</span>
-                                <div class="d-inline text-danger" id="profile-alert-lastName"></div>
-                            </label>
-                            <input type="text" class="form-control" id="profile-input-lastName">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group mt-2">
-                    <label for="address" class="fw-bold">Address:</label>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label for="state">State</label>
-                            <input type="text" class="form-control" maxlength="20" id="profile-input-state">
-                        </div>
-                        <div class="col-md-4">
-                            <label for="city">City</label>
-                            <input type="text" class="form-control" maxlength="20" id="profile-input-city">
-                        </div>
-                        <div class="col-md-4">
-                            <label for="country">Country</label>
-                            <input type="text" class="form-control" maxlength="20" id="profile-input-country">
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md-6">
-                            <label for="street">Street</label>
-                            <input type="text" class="form-control" maxlength="20" id="profile-input-street">
-                        </div>
-                        <div class="col-md-3">
-                            <label for="houseNumber">House number</label>
-                            <input type="number" class="form-control" maxlength="5" id="profile-input-houseNumber">
-                        </div>
-                        <div class="col-md-3">
-                            <label for="zipCode">Zip code</label>
-                            <input type="text" class="form-control" maxlength="10" id="profile-input-zipCode">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group mt-2">
-                    <label for="meansOfCash" class="fw-bold">Means of contact:</label>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="email">Email<span class="text-danger">*</span>
-                                <div class="d-inline text-danger" id="profile-alert-email"></div>
-                            </label>
-                            <input type="email" class="form-control" id="profile-input-email">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="phone">Phone</label>
-                            <input type="tel" class="form-control" maxlength="15" id="profile-input-phone">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group mt-2">
-                    <label for="security" class="fw-bold">Security:</label>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="password">Password<span class="text-danger">*</span>
-                                <div class="d-inline text-danger" id="profile-alert-password"></div>
-                            </label>
-                            <input type="password" class="form-control" id="profile-input-password">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="reEnterPassword">Re-enter password<span class="text-danger">*</span>
-                                <div class="d-inline text-danger d-none" id="profile-alert-rePassword">No match
+                                <div class="col-md-6">
+                                    <label for="lastName">Last name<span class="text-danger">*</span>
+                                        <div class="d-inline text-danger" id="register-alert-lastName"></div>
+                                    </label>
+                                    <input type="text" class="form-control" id="register-input-lastName">
                                 </div>
-                            </label>
-                            <input type="password" class="form-control" id="profile-input-rePassword">
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="form-check mt-3 d-flex justify-content-center">
-                    <input class="form-check-input me-1" type="checkbox" value="" id="profile-input-isAdmin">
-                    <label class="form-check-label ms-1" for="flexCheckDefault">
-                        Admin user
-                    </label>
-                </div>
-                <button type="button" class="btn btn-outline-primary mt-3 w-100" disabled="true"
-                    id="profile-save-btn">Save</button>
-                <button type="button" class="btn btn-outline-danger mt-2 w-100" id="profile-clear-btn">Cencel</button>
-            </form>
-    </div>
-    </main>
+                        <div class="form-group mt-2">
+                            <label for="address" class="fw-bold">Address:</label>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="state">State</label>
+                                    <input type="text" class="form-control" maxlength="20" id="register-input-state">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="city">City</label>
+                                    <input type="text" class="form-control" maxlength="20" id="register-input-city">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="country">Country</label>
+                                    <input type="text" class="form-control" maxlength="20" id="register-input-country">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label for="street">Street</label>
+                                    <input type="text" class="form-control" maxlength="20" id="register-input-street">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="houseNumber">House number</label>
+                                    <input type="number" class="form-control" maxlength="5"
+                                        id="register-input-houseNumber">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="zipCode">Zip code</label>
+                                    <input type="text" class="form-control" maxlength="10" id="register-input-zipCode">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="meansOfCash" class="fw-bold">Means of contact:</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="email">Email<span class="text-danger">*</span>
+                                        <div class="d-inline text-danger" id="register-alert-email"></div>
+                                    </label>
+                                    <input type="email" class="form-control" id="register-input-email">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone">Phone</label>
+                                    <input type="tel" class="form-control" maxlength="15" id="register-input-phone">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="security" class="fw-bold">Security:</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="password">Password<span class="text-danger">*</span>
+                                        <div class="d-inline text-danger" id="register-alert-password"></div>
+                                    </label>
+                                    <input type="password" class="form-control" id="register-input-password">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reEnterPassword">Re-enter password<span class="text-danger">*</span>
+                                        <div class="d-inline text-danger d-none" id="register-alert-rePassword">No
+                                            match
+                                        </div>
+                                    </label>
+                                    <input type="password" class="form-control" id="register-input-rePassword">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-check mt-3 d-flex justify-content-center">
+                            <input class="form-check-input me-1" type="checkbox" value="" id="register-input-isAdmin">
+                            <label class="form-check-label ms-1" for="flexCheckDefault">
+                                Admin user
+                            </label>
+                        </div>
+                        <button type="button" class="btn btn-outline-primary mt-3 w-100" disabled="true"
+                            id="register-btn">Sign
+                            Up!</button>
+                        <button type="button" class="btn btn-outline-warning mt-2 w-100 text-secondary"
+                            id="register-clear-btn">Clear
+                            all</button>
+                    </form>
+            </div>
+            <!-- Profile page -->
+            <div id="profile-page" class="d-none">
+                <h1 class="display-4 mt-1 text-center">Profile page</h1>
+                <h3 class="text-center">Navigate your journey: Manage your account information</h2>
+                    <form class="bg-primary-subtle p-4 rounded" id="profile-form">
+                        <div class="form-group">
+                            <label for="name" class="fw-bold">Name:</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="firstName">First name<span class="text-danger">*</span>
+                                        <div class="d-inline text-danger" id="profile-alert-firstName"></div>
+                                    </label>
+                                    <input type="text" class="form-control" id="profile-input-firstName">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastName">Last name<span class="text-danger">*</span>
+                                        <div class="d-inline text-danger" id="profile-alert-lastName"></div>
+                                    </label>
+                                    <input type="text" class="form-control" id="profile-input-lastName">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="address" class="fw-bold">Address:</label>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="state">State</label>
+                                    <input type="text" class="form-control" maxlength="20" id="profile-input-state">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="city">City</label>
+                                    <input type="text" class="form-control" maxlength="20" id="profile-input-city">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="country">Country</label>
+                                    <input type="text" class="form-control" maxlength="20" id="profile-input-country">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label for="street">Street</label>
+                                    <input type="text" class="form-control" maxlength="20" id="profile-input-street">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="houseNumber">House number</label>
+                                    <input type="number" class="form-control" maxlength="5"
+                                        id="profile-input-houseNumber">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="zipCode">Zip code</label>
+                                    <input type="text" class="form-control" maxlength="10" id="profile-input-zipCode">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="meansOfCash" class="fw-bold">Means of contact:</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="email">Email<span class="text-danger">*</span>
+                                        <div class="d-inline text-danger" id="profile-alert-email"></div>
+                                    </label>
+                                    <input type="email" class="form-control" id="profile-input-email">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone">Phone</label>
+                                    <input type="tel" class="form-control" maxlength="15" id="profile-input-phone">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="security" class="fw-bold">Security:</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="password">Password<span class="text-danger">*</span>
+                                        <div class="d-inline text-danger" id="profile-alert-password"></div>
+                                    </label>
+                                    <input type="password" class="form-control" id="profile-input-password">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reEnterPassword">Re-enter password<span class="text-danger">*</span>
+                                        <div class="d-inline text-danger d-none" id="profile-alert-rePassword">No
+                                            match
+                                        </div>
+                                    </label>
+                                    <input type="password" class="form-control" id="profile-input-rePassword">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-check mt-3 d-flex justify-content-center">
+                            <input class="form-check-input me-1" type="checkbox" value="" id="profile-input-isAdmin">
+                            <label class="form-check-label ms-1" for="flexCheckDefault">
+                                Admin user
+                            </label>
+                        </div>
+                        <button type="button" class="btn btn-outline-primary mt-3 w-100" disabled="true"
+                            id="profile-save-btn">Save</button>
+                        <button type="button" class="btn btn-outline-danger mt-2 w-100"
+                            id="profile-clear-btn">Cencel</button>
+                    </form>
+            </div>
+        </main>
 
 
     </div>

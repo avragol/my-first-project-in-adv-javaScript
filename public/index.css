@@ -40,11 +40,6 @@ nav #mainMenu {
   font-size: 0.9rem !important;
 }
 
-.carousel-caption {
-  border-radius: 8%;
-  background-color: rgba(0, 0, 0, 0.6588235294);
-}
-
 #carouselExampleCaptions {
   width: 50vw;
 }
@@ -52,6 +47,18 @@ nav #mainMenu {
   #carouselExampleCaptions {
     width: 100%;
   }
+}
+#carouselExampleCaptions .carousel-inner {
+  transition: transform 200ms ease-in, box-shadow 200ms ease-in;
+  border-radius: 8px;
+}
+#carouselExampleCaptions .carousel-inner:hover {
+  transform: scale(1.04);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+#carouselExampleCaptions .carousel-caption {
+  border-radius: 8%;
+  background-color: rgba(0, 0, 0, 0.6588235294);
 }
 @media (max-width: 767px) {
   #carouselExampleCaptions .carousel-caption {
@@ -68,18 +75,7 @@ nav #mainMenu {
 #filtersBtns .displayMe {
   height: 200px;
 }
-#filtersBtns .hideMe {
-  animation: dropDown ease-in-out 1s reverse forwards;
-}
 
-@keyframes dropDown {
-  from {
-    height: 0;
-  }
-  to {
-    height: 100px;
-  }
-}
 .card {
   flex-basis: calc(33.33% - 10px);
   align-self: center;
@@ -134,15 +130,17 @@ td a {
 }
 .popup-wrapper #editPopup {
   padding: 2rem;
-  padding-top: 0;
-  padding-bottom: 0;
-  width: 40%;
-  border-radius: 8%;
+  /* padding-top: 0;
+  padding-bottom: 0; */
+  width: 75%;
+  border-radius: 2%;
 }
-.popup-wrapper #editPopup #previewImgContain {
-  display: flex;
-  justify-content: center;
+@media (max-width: 767px) {
+  .popup-wrapper #editPopup {
+    width: 95%;
+    padding: 0.5rem;
+  }
 }
 .popup-wrapper #editPopup #previewImgContain img {
-  width: 50%;
+  width: 100%;
 }/*# sourceMappingURL=index.css.map */

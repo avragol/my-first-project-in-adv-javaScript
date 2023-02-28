@@ -40,17 +40,21 @@
 
     #editPopup {
         padding: 2rem;
-        padding-top: 0;
-        padding-bottom: 0;
-        width: 40%;
-        border-radius: 8%;
+        /* padding-top: 0;
+        padding-bottom: 0; */
+        width: 75%;
+        //height: 90%;
+        border-radius: 2%;
+        //overflow: scroll;
+
+        @include breakpointMd {
+            width: 95%;
+            padding: 0.5rem;
+        }
 
         #previewImgContain {
-            display: flex;
-            justify-content: center;
-
             img {
-                width: 50%;
+                width: 100%;
             }
         }
     }

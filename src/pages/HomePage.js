@@ -1,8 +1,8 @@
 import initialCarousel from "../components/Carousel.js";
-import initialCards from "../components/PicsCards.js";
+import { initialCards } from "../components/PicsCards.js";
 import initialTable from "../components/PicsTable.js";
 import checkIfAdmin from "../utils/checkIfAdmin.js";
-import createBtnEventListener from "../utils/initialAdminBtns.js";
+import { createBtnEventListener } from "../utils/initialAdminBtns.js";
 import validateUrl from "../validation/validateUrl.js";
 import validateTitle from "../validation/validateTitle.js";
 import validateName from "../validation/validateName.js";
@@ -118,12 +118,13 @@ const initialDeletePopup = (idToDel) => {
 }
 
 const initialEditPopup = (idToEdit) => {
-    let picToEdit = picsArr.filter((item) => item.picId == idToEdit)[0];
+    let picToEdit = picsArr.find((item) => item.picId == idToEdit);
     POPUPCONTAINER.classList.remove("d-none");
     POPUPCONTAINER.innerHTML = `<div id="editPopup">
                     <button type="button" class="btn-close ms-" aria-label="Close" id="closeAddPopup"></button>
-                    <h4 class="text-center">Edit Picture Form</h4>
-                    <form>
+                    <h4 class="display-6 text-center">Edit Picture Form</h4>
+                    <div class="d-flex">
+                    <form class="w-50">
                         <div class="mb-1">
                             <label for="image-url" class="form-label">Image URL <div class="d-inline text-danger"
                                     id="edit-alert-url"></div>
@@ -158,12 +159,13 @@ const initialEditPopup = (idToEdit) => {
                             <input type="text" class="form-control" id="edit-input-alt" name="image-alt"
                                 placeholder="(up to 20 characters)" required value="${picToEdit.alt}">
                         </div>
-                        <h6 class="mt-2">Preview image:</h6>
-                        <div id="previewImgContain"><img
-                                src="${picToEdit.url}" alt="${picToEdit.alt}" id="editImgPreview"></div>
-                        <button type="buttom" class="btn btn-outline-primary w-100 mb-2 mt-2"
-                            id="editPicBtn">Save changes</button>
                     </form>
+                    <div class="d-block w-50 ms-2" id="previewImgContain">
+                    <h6 class="mt-2">Preview image:</h6>
+                    <img src="${picToEdit.url}" alt="${picToEdit.alt}"id="editImgPreview">
+                        </div>
+                </div>
+                <button type = "buttom" class="btn btn-outline-primary w-100 mb-2 mt-2"id = "editPicBtn" > Save changes </button>
                 </div>`;
 
 

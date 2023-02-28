@@ -4,6 +4,7 @@ import { initialDeletePopup, initialEditPopup } from "../pages/HomePage.js";
 const getIdFromClick = (ev) => {
     let idFromId = ev.target.id.split("-"); // split the id to array
     if (!ev.target.id) {
+        console.log("ping");
         /*
             if press on icon then there is no id
             then we need to take the id of the parent which is btn
@@ -34,4 +35,4 @@ const editPic = (ev) => {
     initialEditPopup(getIdFromClick(ev))
 }
 
-export default createBtnEventListener;
+export { createBtnEventListener, getIdFromClick };
