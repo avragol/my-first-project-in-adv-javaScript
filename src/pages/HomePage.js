@@ -25,6 +25,7 @@ window.addEventListener("load", () => {
     initialCards(picsArr, isAdmin);
     initialTable(picsArr, isAdmin);
     createBtnEventListener();
+    initialBuyBtn();
 })
 
 const swicthDisplay = (choosenDisplay) => {
@@ -282,8 +283,22 @@ const initialEditPopup = (idToEdit) => {
         POPUPCONTAINER.classList.add("d-none");
         POPUPCONTAINER.innerHTML = "";
     });
+}
 
-
+const initialBuyBtn = () => {
+    document.querySelectorAll("[id^=buyBtn]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            POPUPCONTAINER.classList.remove("d-none");
+            POPUPCONTAINER.innerHTML = `
+            <div class="text-center p-3 rounded-3">
+                    <button type="button" class="btn-close mb-3" aria-label="Close" id="closeAddPopup"></button>
+                    <h3>Hi!</h3>
+                    <h4>It's not a real website...</h4>
+                    <h5>See you in the next projects <i class="bi bi-emoji-smile-fill text-warning"></i></h5>
+                </div>
+            `
+        })
+    })
 }
 
 
