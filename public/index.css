@@ -87,7 +87,11 @@ nav #mainMenu {
   }
 }
 
-td a {
+table {
+  width: -moz-max-content !important;
+  width: max-content !important;
+}
+table td a {
   cursor: pointer;
 }
 

@@ -50,8 +50,13 @@
     }
 }
 
-td {
-    a {
-        cursor: pointer;
+
+table {
+    width: max-content !important;
+
+    td {
+        a {
+            cursor: pointer;
+        }
     }
 }
