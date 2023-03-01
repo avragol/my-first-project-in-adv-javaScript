@@ -27,10 +27,12 @@ const createBtnEventListener = () => {
     }
 };
 
+//init the popup to delete popup by the clicked element id
 const deletePic = (ev) => {
     initialDeletePopup(getIdFromClick(ev));
 }
 
+//init the popup to edit popup by the clicked element id
 const editPic = (ev) => {
     initialEditPopup(getIdFromClick(ev))
 }

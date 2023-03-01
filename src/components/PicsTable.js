@@ -50,7 +50,7 @@ const createTablePics = () => {
         `
     }
     if (isAdmin && firstTime) {
-        //if the connected user is admin' add more colums to the table
+        //if the connected user is admin, and itws the first initial, add more colums to the table
         HEADROWTABLE.innerHTML += `
         <th scope="col">Edit</th>
         <th scope="col">Delete</th>`;

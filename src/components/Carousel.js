@@ -27,7 +27,8 @@ const createCarouselItem = (active, url, title, credit, alt, picId) => {
     `
 }
 
-//the function passes through the array and for every picture build html elemnt into the carousel
+/* the function passes through the array and for every picture build html elemnt into the carousel
+additional, she's add click event for every element that open the popup. */
 const createCarousel = () => {
     let innerStr = "";
     let active = true;
