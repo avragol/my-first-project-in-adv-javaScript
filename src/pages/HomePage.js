@@ -18,7 +18,6 @@ let picsArr = JSON.parse(localStorage.getItem("pics"));
 let newPicsArr;
 let isAdmin;
 
-
 window.addEventListener("load", () => {
     isAdmin = checkIfAdmin();
     initialCarousel(picsArr);
