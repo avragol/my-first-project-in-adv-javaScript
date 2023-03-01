@@ -5,6 +5,8 @@ import validateName from "../validation/validateName.js";
 import validatePassword from "../validation/validatePassword.js";
 import validateEmail from "../validation/validateEmail.js";
 import checkInput from "../utils/checkInput.js";
+import { switchPage } from "../routes/router.js";
+import PAGES from "../models/PageModel.js";
 
 /* SET ELEMNTS TO VARIBELS */
 const REGISTERINPUTFIRSTNAME = document.getElementById("register-input-firstName");
@@ -103,6 +105,11 @@ REGISTERBTN.addEventListener("click", () => {
     }
     //save the array to the local storge.
     localStorage.setItem("users", JSON.stringify(usersArr));
+    // clear all inputs in the form
+    document.getElementById("register-form").querySelectorAll("input").forEach((item) => { item.value = "" });
+    //take him to the login page
+    switchPage(PAGES.LOGIN);
+
 })
 
 /* clear all inputs in the form when click on the clear btn */

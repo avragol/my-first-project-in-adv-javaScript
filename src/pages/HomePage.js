@@ -163,9 +163,17 @@ const initialEditPopup = (idToEdit) => {
                     <div class="d-block w-50 ms-2" id="previewImgContain">
                     <h6 class="mt-2">Preview image:</h6>
                     <img src="${picToEdit.url}" alt="${picToEdit.alt}"id="editImgPreview">
+                    <div class="my-1">
+                            <label for="image-location" class="form-label">Location <div class="d-inline text-danger" id="edit-alert-location"></div></label>
+                            <input type="text" class="form-control" id="edit-input-location" name="image-location" placeholder="(Up to 15 characters)" required value="${picToEdit.location}">
+                        </div>
+                        <div class="mb-2">
+                            <label for="edit-input-description">Description<div class="d-inline text-danger" id="edit-alert-description"></div></label>
+                            <textarea class="form-control" maxlength="300" placeholder="Up to 300 characters" id="edit-input-description" style="height: 6.5rem; resize: none">${picToEdit.description}</textarea>
+                        </div>
                         </div>
                 </div>
-                <button type = "buttom" class="btn btn-outline-primary w-100 mb-2 mt-2"id = "editPicBtn" > Save changes </button>
+                <button type="buttom" class="btn btn-outline-primary w-100 mb-2 mt-2"id = "editPicBtn" > Save changes </button>
                 </div>`;
 
 
@@ -174,16 +182,22 @@ const initialEditPopup = (idToEdit) => {
     let priceOk = true;
     let creditOk = true;
     let altOk = true;
+    let locationOk = true;
+    let descriptionOk = true;
 
     const EDITINPUTURL = document.getElementById("edit-input-url");
     const EDITINPUTTITLE = document.getElementById("edit-input-title");
     const EDITINPUTPRICE = document.getElementById("edit-input-price");
     const EDITINPUTCREDIT = document.getElementById("edit-input-credit");
     const EDITINPUTALT = document.getElementById("edit-input-alt");
+    const EDITINPUTLOCATION = document.getElementById("edit-input-location");
+    const EDITINPUTDESCRIPTION = document.getElementById("edit-input-description");
     const EDITALERTURL = document.getElementById("edit-alert-url");
     const EDITALERTTITLE = document.getElementById("edit-alert-title");
     const EDITALERTPRICE = document.getElementById("edit-alert-price");
     const EDITALERTCREDIT = document.getElementById("edit-alert-credit");
+    const EDITALERTLOCATION = document.getElementById("edit-alert-location");
+    const EDITALERTDESCRIPTION = document.getElementById("edit-alert-description");
     const EDITALERTALT = document.getElementById("edit-alert-alt");
 
     EDITINPUTURL.addEventListener("input", () => {
@@ -225,9 +239,33 @@ const initialEditPopup = (idToEdit) => {
         }
         checkIfCanAble();
     })
+    EDITINPUTLOCATION.addEventListener("input", () => {
+        if (EDITINPUTLOCATION.value.length < 20) {
+            EDITALERTLOCATION.innerHTML = "";
+            EDITINPUTLOCATION.classList.remove("is-invaild");
+            locationOk = true
+        } else {
+            EDITALERTLOCATION.innerHTML = "Location text is too long";
+            EDITINPUTLOCATION.classList.add("is-invaild");
+            locationOk = false
+        }
+        checkIfCanAble();
+    });
+    EDITINPUTDESCRIPTION.addEventListener("input", () => {
+        if (EDITINPUTDESCRIPTION.value) {
+            EDITALERTDESCRIPTION.innerHTML = "";
+            EDITINPUTDESCRIPTION.classList.remove("is-invaild");
+            descriptionOk = true
+        } else {
+            EDITALERTDESCRIPTION.innerHTML = "Please set a Description";
+            EDITINPUTDESCRIPTION.classList.add("is-invaild");
+            descriptionOk = false
+        }
+        checkIfCanAble();
+    })
 
     const checkIfCanAble = () => {
-        EDITPICBTN.disabled = !(urlOk && titleOk && creditOk && priceOk && altOk)
+        EDITPICBTN.disabled = !(urlOk && titleOk && creditOk && priceOk && altOk && locationOk && descriptionOk)
     }
 
     const EDITPICBTN = document.getElementById("editPicBtn");
@@ -238,7 +276,8 @@ const initialEditPopup = (idToEdit) => {
         picToEdit.price = EDITINPUTPRICE.value;
         picToEdit.credit = EDITINPUTCREDIT.value;
         picToEdit.alt = EDITINPUTALT.value;
-        console.log(picToEdit);
+        picToEdit.location = EDITINPUTLOCATION.value;
+        picToEdit.description = EDITINPUTDESCRIPTION.value;
         editPic(picToEdit);
         POPUPCONTAINER.classList.add("d-none");
         POPUPCONTAINER.innerHTML = "";
