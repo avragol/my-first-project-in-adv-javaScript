@@ -8,11 +8,13 @@ const REGISTERMENULINK = document.getElementById("register-page-link");
 const PROFILEMENULINK = document.getElementById("profile-page-link");
 const LOGOUTMENULINK = document.getElementById("log-out-link");
 const ADDPICLINK = document.getElementById("add-pic-link");
+const ABOUTMENULINK = document.getElementById("about-page-link");
 
 HOMEMENULINK.addEventListener("click", () => { switchPage(PAGES.HOME) });
 LOGINMENULINK.addEventListener("click", () => { switchPage(PAGES.LOGIN) });
 REGISTERMENULINK.addEventListener("click", () => { switchPage(PAGES.REGISTER) });
 PROFILEMENULINK.addEventListener("click", () => { switchPage(PAGES.PROFILE) });
+ABOUTMENULINK.addEventListener("click", () => { switchPage(PAGES.ABOUT) });
 LOGOUTMENULINK.addEventListener("click", () => {
     localStorage.removeItem("userToken");
     location.reload();

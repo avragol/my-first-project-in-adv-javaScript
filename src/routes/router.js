@@ -13,10 +13,10 @@ const switchPage = (pageToDisplay) => {
             document.getElementById(page).classList.remove("d-block");
             document.getElementById(page).classList.add("d-none");
         }
-        if (!aPageOpens) {
-            document.getElementById(PAGES.NOTFOUND).classList.remove("d-none");
-            document.getElementById(PAGES.NOTFOUND).classList.add("d-block");
-        }
+    }
+    if (!aPageOpens) {
+        document.getElementById(PAGES.NOTFOUND).classList.remove("d-none");
+        document.getElementById(PAGES.NOTFOUND).classList.add("d-block");
     }
 }
 
