@@ -1,10 +1,10 @@
-import { initialDeletePopup, initialEditPopup } from "../pages/HomePage.js";
+import initialDeletePopup from "../components/deletePicPopup.js";
+import initialEditPopup from "../components/editPicPopup.js";
 
 //this func get and return the id of the clicked btn
 const getIdFromClick = (ev) => {
     let idFromId = ev.target.id.split("-"); // split the id to array
     if (!ev.target.id) {
-        console.log("ping");
         /*
             if press on icon then there is no id
             then we need to take the id of the parent which is btn
@@ -15,7 +15,13 @@ const getIdFromClick = (ev) => {
 };
 
 //this func creates event listener for the delete buttons
-const createBtnEventListener = () => {
+let picsArr;
+let deletePicFinaly;
+let editPicfinaly;
+const createBtnEventListener = (picsArrFromHomePage, deletePicFinalyFromHomePage, editPicfinalyFromHomePage) => {
+    editPicfinaly = editPicfinalyFromHomePage;
+    picsArr = picsArrFromHomePage;
+    deletePicFinaly = deletePicFinalyFromHomePage;
     let deleteBtns = document.querySelectorAll(`[id^='deleteBtn']`);
     let editBtns = document.querySelectorAll(`[id^='editBtn']`);
     //add events to new btns
@@ -29,12 +35,12 @@ const createBtnEventListener = () => {
 
 //init the popup to delete popup by the clicked element id
 const deletePic = (ev) => {
-    initialDeletePopup(getIdFromClick(ev));
+    initialDeletePopup(getIdFromClick(ev), deletePicFinaly);
 }
 
 //init the popup to edit popup by the clicked element id
 const editPic = (ev) => {
-    initialEditPopup(getIdFromClick(ev))
+    initialEditPopup(getIdFromClick(ev), picsArr, editPicfinaly)
 }
 
 export { createBtnEventListener, getIdFromClick };

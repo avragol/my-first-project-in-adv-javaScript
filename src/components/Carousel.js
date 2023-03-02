@@ -39,7 +39,6 @@ const createCarousel = () => {
     CAROUSELPICS.innerHTML = innerStr;
     CAROUSELPICS.querySelectorAll("[id^='carouselItem']").forEach((item) => {
         item.addEventListener("click", (ev) => {
-            console.log(getIdFromClick(ev));
             let picToPopup = picsArr.find((pic) => pic.picId == getIdFromClick(ev))
             POPUPCONTAINER.classList.remove("d-none");
             POPUPCONTAINER.innerHTML = `<div class="card p-2" style="width: 18rem;">
