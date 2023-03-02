@@ -4,7 +4,7 @@ The project is a website for selling photos, with visually appealing forms to di
 
 ## Table of Contents
 
-- [PicPort](#project-title)
+- [PicPort](#PicPort)
 - [About the Project](#about-the-project)
 - [Usage](#usage)
 - [Contact](#contact)
