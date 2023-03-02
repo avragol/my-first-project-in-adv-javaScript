@@ -34,3 +34,6 @@ window.addEventListener("load", () => {
         PROFILEMENULINK.innerHTML = `<u>${userToken.firstName} ${userToken.lastName}</u>`
     }
 })
+
+//link to home page from 404 page
+document.getElementById("come-back-link").addEventListener("click", () => { switchPage(PAGES.HOME) })
