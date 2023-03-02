@@ -95,6 +95,13 @@ table td a {
   cursor: pointer;
 }
 
+#about-page div {
+  flex-basis: 50%;
+}
+#about-page p {
+  text-align: justify;
+}
+
 .popup-wrapper {
   position: fixed;
   width: 100vw;
