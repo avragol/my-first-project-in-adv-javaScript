@@ -17,7 +17,7 @@ let descriptionOk;
 const initialAddNewPicPopup = () => {
     POPUPCONTAINER.classList.remove("d-none");
     POPUPCONTAINER.innerHTML = `
-        <div id="addNewPicPopup">
+        <div id="addNewPicPopup" class="rounded-2">
                     <button type="button" class="btn-close ms-" aria-label="Close" id="closeAddPopup"></button>
                     <h2 class="display-6">Add your wonderful picture!</h2>
                     <h4 class="h6">Fill in your photo details and let the talent burst out</h4>
