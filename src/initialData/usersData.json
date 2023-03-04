@@ -1,0 +1,36 @@
+[
+    {
+        "userId": 0,
+        "firstName": "Avi",
+        "lastName": "Levi",
+        "address": {
+            "state": "",
+            "city": "",
+            "country": "Israel",
+            "street": "",
+            "houseNumber": 156,
+            "zipCode": ""
+        },
+        "email": "avi@levi.il",
+        "password": "Aa123456!",
+        "phone": "",
+        "isAdmin": true
+    },
+    {
+        "userId": 1,
+        "firstName": "Dani",
+        "lastName": "Gal",
+        "address": {
+            "state": "",
+            "city": "",
+            "country": "Israel",
+            "street": "",
+            "houseNumber": 157,
+            "zipCode": ""
+        },
+        "email": "dani@gal.il",
+        "password": "Aa123456!",
+        "phone": "",
+        "isAdmin": false
+    }
+]

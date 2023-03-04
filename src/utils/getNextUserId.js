@@ -2,7 +2,7 @@
 const getNextUserId = () => {
     let nextUserId = localStorage.getItem("nextUserId");
     if (!nextUserId) {
-        nextUserId = 0;
+        nextUserId = 2;//Because in the json file of the predefined images, there is already an Id  0 and 1
     }
     nextUserId = +nextUserId;
     localStorage.setItem("nextUserId", (nextUserId + 1) + "");
