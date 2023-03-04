@@ -1,3 +1,4 @@
+import checkIfConnected from "../utils/checkIfConnected.js";
 /* Set varible tht will contain the picture array and boolean varible that will contain if the connected user is admin */
 let picsArr;
 let isAdmin;
@@ -19,7 +20,10 @@ const createCardItem = (isAdmin, url, alt, title, credit, price, picId) => {
                         <img src="${url}" class="card-img-top"
                             alt="${alt}" height="300">
                         <div class="card-body">
+                        <div class="d-flex justify-content-between">
                             <h5 class="card-title">${title}</h5>
+                             ${checkIfConnected() ? initialShopCart() : ""}   
+                            </div>
                             <p class="card-text">Picture by ${credit}.</p>
                             <ul class="list-group list-group-flush border rounded">
                                 <li class="list-group-item border">Price: ${price}$</li>
@@ -48,6 +52,10 @@ const initialAdminBtns = (picId) => {
     <buttom class="btn btn-warning text-center" id="editBtnGallery-${picId}">Edit</buttom>
     <buttom class="btn btn-danger text-center" id="deleteBtnGallery-${picId}">Delete</buttom>
     `
+}
+
+const initialShopCart = () => {
+    return `<a class="border px-2 pt-1"><i class="bi bi-cart-plus-fill"></i></a>`
 }
 
 export { initialCards, createCardItem };
