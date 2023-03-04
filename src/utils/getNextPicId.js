@@ -2,7 +2,7 @@
 const getNextPicId = () => {
     let nextPicId = localStorage.getItem("nextPicId");
     if (!nextPicId) {
-        nextPicId = 0;
+        nextPicId = 3; //Because in the json file of the predefined images, there is already an Id from 0 to 2
     }
     nextPicId = +nextPicId;
     localStorage.setItem("nextPicId", (nextPicId + 1) + "");
