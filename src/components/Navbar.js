@@ -1,6 +1,7 @@
 import PAGES from "../models/PageModel.js";
 import { switchPage } from "../routes/router.js";
 import initialAddNewPicPopup from "./addNewPicPopup.js";
+import checkIfConnected from "../utils/checkIfConnected.js";
 
 const HOMEMENULINK = document.getElementById("home-page-link");
 const LOGINMENULINK = document.getElementById("login-page-link");
@@ -22,7 +23,7 @@ LOGOUTMENULINK.addEventListener("click", () => {
 ADDPICLINK.addEventListener("click", initialAddNewPicPopup);
 
 window.addEventListener("load", () => {
-    let userToken = JSON.parse(localStorage.getItem("userToken"));
+    let userToken = checkIfConnected();
     if (!userToken) {
         LOGINMENULINK.classList.remove("d-none");
         REGISTERMENULINK.classList.remove("d-none");

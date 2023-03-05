@@ -76,15 +76,22 @@ nav #mainMenu {
   height: 200px;
 }
 
-.card {
+#cardsPics .card {
   flex-basis: calc(33.33% - 10px);
   align-self: center;
   margin: 5px;
 }
 @media (max-width: 767px) {
-  .card {
+  #cardsPics .card {
     flex-basis: 100%;
   }
+}
+#cardsPics .card h5 ~ a {
+  cursor: pointer;
+}
+#cardsPics .card h5 ~ a:hover {
+  transform: scale(1.2);
+  transform: rotate(-10deg);
 }
 
 table {

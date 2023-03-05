@@ -22,7 +22,7 @@ const createCardItem = (isAdmin, url, alt, title, credit, price, picId) => {
                         <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <h5 class="card-title">${title}</h5>
-                             ${checkIfConnected() ? initialShopCart() : ""}   
+                             ${checkIfConnected() ? initialShopCart(picId) : ""}   
                             </div>
                             <p class="card-text">Picture by ${credit}.</p>
                             <ul class="list-group list-group-flush border rounded">
@@ -54,8 +54,8 @@ const initialAdminBtns = (picId) => {
     `
 }
 
-const initialShopCart = () => {
-    return `<a class="border px-2 pt-1"><i class="bi bi-cart-plus-fill"></i></a>`
+const initialShopCart = (picId) => {
+    return `<a class="border px-2 pt-1" id="cartBtnGallery-${picId}"><i class="bi bi-cart-plus-fill"></i></a>`
 }
 
 export { initialCards, createCardItem };

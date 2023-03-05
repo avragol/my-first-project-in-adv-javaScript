@@ -40,16 +40,26 @@
     }
 }
 
-.card {
-    flex-basis: calc(33.33% - 10px);
-    align-self: center;
-    margin: 5px;
+#cardsPics {
+    .card {
+        flex-basis: calc(33.33% - 10px);
+        align-self: center;
+        margin: 5px;
 
-    @include breakpointMd {
-        flex-basis: 100%;
+        @include breakpointMd {
+            flex-basis: 100%;
+        }
+
+        h5~a {
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.2);
+                transform: rotate(-10deg)
+            }
+        }
     }
 }
-
 
 table {
     width: max-content !important;
