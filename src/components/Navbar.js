@@ -23,12 +23,13 @@ LOGOUTMENULINK.addEventListener("click", () => {
 ADDPICLINK.addEventListener("click", initialAddNewPicPopup);
 
 window.addEventListener("load", () => {
-    let userToken = checkIfConnected();
-    if (!userToken) {
+    let isConnected = checkIfConnected();
+    if (!isConnected) {
         LOGINMENULINK.classList.remove("d-none");
         REGISTERMENULINK.classList.remove("d-none");
         return;
     } else {
+        let userToken = JSON.parse(localStorage.getItem("userToken"))
         PROFILEMENULINK.classList.remove("d-none");
         LOGOUTMENULINK.classList.remove("d-none");
         ADDPICLINK.classList.remove("d-none");

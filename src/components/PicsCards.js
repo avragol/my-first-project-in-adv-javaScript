@@ -1,7 +1,9 @@
 import checkIfConnected from "../utils/checkIfConnected.js";
+import { getIdFromClick } from "../utils/initialAdminBtns.js";
 /* Set varible tht will contain the picture array and boolean varible that will contain if the connected user is admin */
 let picsArr;
 let isAdmin;
+let shopCartArr = [];
 
 /* set the cards gallery elemnt */
 const CARDSPICS = document.getElementById("cardsPics");
@@ -11,6 +13,7 @@ const initialCards = (picsArrFromHomePage, isAdminFromHomePage) => {
     picsArr = picsArrFromHomePage;
     isAdmin = isAdminFromHomePage;
     createCardsGallery();
+    intialCartBtn();
 }
 
 //the function return HTML code for one card by the parameters
@@ -56,6 +59,16 @@ const initialAdminBtns = (picId) => {
 
 const initialShopCart = (picId) => {
     return `<a class="border px-2 pt-1" id="cartBtnGallery-${picId}"><i class="bi bi-cart-plus-fill"></i></a>`
+}
+
+const intialCartBtn = () => {
+    document.querySelectorAll("[id^=cartBtn]").forEach((btn) => {
+        btn.addEventListener("click", (ev) => {
+            let choosenPic = picsArr.find((pic) => pic.picId == getIdFromClick(ev))
+            shopCartArr = [...shopCartArr, choosenPic]
+            console.log(shopCartArr);
+        })
+    })
 }
 
 export { initialCards, createCardItem };

@@ -1,13 +1,9 @@
-// Import statements to load various modules
+// Imports
 import initialCarousel from "../components/Carousel.js";
 import { initialCards } from "../components/PicsCards.js";
 import initialTable from "../components/PicsTable.js";
 import checkIfAdmin from "../utils/checkIfAdmin.js";
 import { createBtnEventListener } from "../utils/initialAdminBtns.js";
-import validateUrl from "../validation/validateUrl.js";
-import validateTitle from "../validation/validateTitle.js";
-import validateName from "../validation/validateName.js";
-import checkInput from "../utils/checkInput.js";
 
 // Constants to hold various elements
 const CAROUSELDIV = document.getElementById("carouselExampleCaptions");
@@ -155,6 +151,7 @@ const initialBuyBtn = () => {
         });
     });
 }
+
 
 
 
