@@ -68,6 +68,7 @@ const updateDisplays = (newPicsArrParm) => {
     initialCards(newPicsArrParm, isAdmin);
     initialTable(newPicsArrParm, isAdmin);
     createBtnEventListener(picsArr, deletePicFinaly, editPic);
+    initialBuyBtn();
 };
 
 // Function to sort the pictures alphabetically

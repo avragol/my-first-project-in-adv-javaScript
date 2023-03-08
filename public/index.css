@@ -40,6 +40,53 @@ nav #mainMenu {
   font-size: 0.9rem !important;
 }
 
+#register-page .tooltipByMe {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #ccc;
+  text-align: center;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 16px;
+  position: relative;
+}
+#register-page .tooltipByMe:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid #ccc;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+#register-page .tooltipByMe:after {
+  content: "Include at least 8 characters, including uppercase and lowercase letters, numbers, and special characters.";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 5px;
+  background-color: #ccc;
+  color: #000;
+  font-size: 12px;
+  line-height: 1.2;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.2s ease-in-out;
+}
+#register-page .tooltipByMe:hover:after {
+  visibility: visible;
+  opacity: 1;
+}
+
 #carouselExampleCaptions {
   width: 50vw;
 }
