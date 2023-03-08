@@ -137,8 +137,6 @@ const initialAddNewPicPopup = () => {
 
     const checkIfCanAble = () => {
         ADDPICBTN.disabled = !(urlOk && titleOk && creditOk && priceOk && altOk && locationOk && descriptionOk)
-        console.log("des: " + descriptionOk);
-        console.log("loc " + locationOk);
     }
 
     ADDPICBTN.addEventListener("click", () => {

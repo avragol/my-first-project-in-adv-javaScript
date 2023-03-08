@@ -3,7 +3,7 @@ const importPicData = async () => {
     try {
         return data;
     } catch (err) {
-        console.error("somthing in the import worng" + err);
+        return;
     }
 }
 

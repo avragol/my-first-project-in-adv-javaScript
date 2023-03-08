@@ -1,6 +1,10 @@
 const createUserData = async () => {
     let { data } = await axios.get("../src/initialData/usersData.json")
-    return data;
+    try {
+        return data;
+    } catch (err) {
+        return;
+    }
 }
 
 const setInitialUsersData = async () => {
