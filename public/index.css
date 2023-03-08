@@ -156,8 +156,6 @@ table td a {
 }
 .popup-wrapper #editPopup {
   padding: 2rem;
-  /* padding-top: 0;
-  padding-bottom: 0; */
   width: 75%;
   border-radius: 2%;
 }

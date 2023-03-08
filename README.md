@@ -2,12 +2,6 @@
 
 The project is a website for selling photos, with visually appealing forms to display the photos. It includes a registration and login system for users to create accounts. The website is built using HTML, CSS, and JavaScript, and utilizes SASS and Bootstrap libraries for styling features.
 
-## Table of Contents
-
-- [PicPort](#PicPort)
-- [About the Project](#about-the-project)
-- [Usage](#usage)
-- [Contact](#contact)
 
 ## About the Project
 
