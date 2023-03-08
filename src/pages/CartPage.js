@@ -4,6 +4,7 @@ let userToken = JSON.parse(localStorage.getItem("userToken"));
 
 /* set the cards gallery elemnt */
 const CARTDIV = document.getElementById("cartDiv");
+const POPUPCONTAINER = document.getElementById("modularPopup");
 
 window.addEventListener("load", () => {
     if (userToken.cart.length > 0) {
@@ -20,7 +21,7 @@ const updateCart = (newUserToken) => {
 //the function return HTML code for one card by the parameters
 const createCardItem = (isAdmin, url, alt, title, credit, price, picId) => {
     return `
-    <div class="card p-2" style="width: 18rem;">
+    <div class="card p-2">
                         <img src="${url}" class="card-img-top"
                             alt="${alt}" height="300">
                         <div class="card-body">

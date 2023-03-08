@@ -7,6 +7,8 @@ let isAdmin;
 
 /* set the cards gallery elemnt */
 const CARDSPICS = document.getElementById("cardsPics");
+/* set the popup elemnt */
+const POPUPCONTAINER = document.getElementById("modularPopup");
 
 /* init the gallery by information from home page (the func is exported to home pagק and run from there) */
 const initialCards = (picsArrFromHomePage, isAdminFromHomePage) => {
@@ -77,16 +79,16 @@ const addPicToCart = (choosenPic) => {
         localStorage.setItem("userToken", JSON.stringify(userToken));
         updateUsersArr(userToken);
         updateCart(userToken)
+        addToCartPopup();
+    } else {
+        addToCartFailedPopup();
     }
 }
 
 const isPicInCart = (pic, cart) => {
-    return cart.find((el) => {
-        // Compare each property of the objects
-        for (const prop in pic) {
-            if (pic[prop] !== el[prop]) {
-                return false;
-            }
+    return cart.find((item) => {
+        if (pic.picId !== item.picId) {
+            return false;
         }
         return true;
     })
@@ -99,6 +101,30 @@ const updateUsersArr = (userToUpdate) => {
         usersArr[index] = JSON.parse(JSON.stringify(userToUpdate));
         localStorage.setItem("users", JSON.stringify(usersArr));
     }
+}
+
+const addToCartPopup = () => {
+    // Remove the "d-none" class from the element with the id "POPUPCONTAINER"
+    POPUPCONTAINER.classList.remove("d-none");
+    // Set the innerHTML of the element with the id "POPUPCONTAINER" to the following string:
+    POPUPCONTAINER.innerHTML = `
+                <div class="text-center p-3 rounded-3">
+                    <button type="button" class="btn-close mb-3" aria-label="Close" id="closeAddPopup"></button>
+                    <h3>The image has been added successfully!</h3>
+                </div>
+            `;
+}
+
+const addToCartFailedPopup = () => {
+    // Remove the "d-none" class from the element with the id "POPUPCONTAINER"
+    POPUPCONTAINER.classList.remove("d-none");
+    // Set the innerHTML of the element with the id "POPUPCONTAINER" to the following string:
+    POPUPCONTAINER.innerHTML = `
+                <div class="text-center p-3 rounded-3">
+                    <button type="button" class="btn-close mb-3" aria-label="Close" id="closeAddPopup"></button>
+                    <h3>The picture is already in the cart</h3>
+                </div>
+            `;
 }
 
 export { initialCards, createCardItem };

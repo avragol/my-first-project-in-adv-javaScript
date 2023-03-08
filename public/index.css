@@ -102,6 +102,10 @@ table td a {
   cursor: pointer;
 }
 
+#cart-page .card {
+  flex-basis: 32.5%;
+}
+
 #about-page div {
   flex-basis: 50%;
 }
