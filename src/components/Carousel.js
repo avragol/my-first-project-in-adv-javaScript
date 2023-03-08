@@ -41,7 +41,7 @@ const createCarousel = () => {
         item.addEventListener("click", (ev) => {
             let picToPopup = picsArr.find((pic) => pic.picId == getIdFromClick(ev))
             POPUPCONTAINER.classList.remove("d-none");
-            POPUPCONTAINER.innerHTML = `<div class="card p-2" style="width: 18rem;">
+            POPUPCONTAINER.innerHTML = `<div class="card p-2">
             <button type="button" class="btn-close ms-" aria-label="Close" id="closeAddPopup"></button>
                 <img src="${picToPopup.url}" class="card-img-top"
                     alt="${picToPopup.alt}" height="300">
@@ -51,6 +51,7 @@ const createCarousel = () => {
                         <ul class="list-group list-group-flush border rounded">
                             <li class="list-group-item border">Price: ${picToPopup.price}$</li>
                             <li class="list-group-item border">Taken in: ${picToPopup.location}</li>
+                            <li class="list-group-item border">Created at: ${picToPopup.createdAt}</li>
                             <li class="list-group-item border">Description: ${picToPopup.description}</li>
                         </ul>
                     </div>

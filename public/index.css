@@ -165,4 +165,9 @@ table td a {
 }
 .popup-wrapper #editPopup #previewImgContain img {
   width: 100%;
+}
+.popup-wrapper .card {
+  width: 50%;
+  max-height: 98%;
+  overflow: scroll;
 }/*# sourceMappingURL=index.css.map */
