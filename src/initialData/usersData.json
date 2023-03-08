@@ -14,7 +14,8 @@
         "email": "avi@levi.il",
         "password": "Aa123456!",
         "phone": "",
-        "isAdmin": true
+        "isAdmin": true,
+        "cart": []
     },
     {
         "userId": 1,
@@ -31,6 +32,7 @@
         "email": "dani@gal.il",
         "password": "Aa123456!",
         "phone": "",
-        "isAdmin": false
+        "isAdmin": false,
+        "cart": []
     }
 ]

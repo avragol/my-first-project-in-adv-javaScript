@@ -1,9 +1,9 @@
 import checkIfConnected from "../utils/checkIfConnected.js";
 import { getIdFromClick } from "../utils/initialAdminBtns.js";
+import updateCart from "../pages/CartPage.js";
 /* Set varible tht will contain the picture array and boolean varible that will contain if the connected user is admin */
 let picsArr;
 let isAdmin;
-let shopCartArr = [];
 
 /* set the cards gallery elemnt */
 const CARDSPICS = document.getElementById("cardsPics");
@@ -62,13 +62,43 @@ const initialShopCart = (picId) => {
 }
 
 const intialCartBtn = () => {
-    document.querySelectorAll("[id^=cartBtn]").forEach((btn) => {
+    document.querySelectorAll("[id^=cartBtnGallery]").forEach((btn) => {
         btn.addEventListener("click", (ev) => {
             let choosenPic = picsArr.find((pic) => pic.picId == getIdFromClick(ev))
-            shopCartArr = [...shopCartArr, choosenPic]
-            console.log(shopCartArr);
+            addPicToCart(choosenPic);
         })
     })
+}
+
+const addPicToCart = (choosenPic) => {
+    let userToken = JSON.parse(localStorage.getItem("userToken"));
+    if (!isPicInCart(choosenPic, userToken.cart)) {
+        userToken.cart = [...userToken.cart, JSON.parse(JSON.stringify(choosenPic))];
+        localStorage.setItem("userToken", JSON.stringify(userToken));
+        updateUsersArr(userToken);
+        updateCart(userToken)
+    }
+}
+
+const isPicInCart = (pic, cart) => {
+    return cart.find((el) => {
+        // Compare each property of the objects
+        for (const prop in pic) {
+            if (pic[prop] !== el[prop]) {
+                return false;
+            }
+        }
+        return true;
+    })
+};
+
+const updateUsersArr = (userToUpdate) => {
+    let usersArr = JSON.parse(localStorage.getItem("users"));
+    const index = usersArr.findIndex((user) => user.userId === userToUpdate.userId);
+    if (index !== -1) {
+        usersArr[index] = JSON.parse(JSON.stringify(userToUpdate));
+        localStorage.setItem("users", JSON.stringify(usersArr));
+    }
 }
 
 export { initialCards, createCardItem };

@@ -41,6 +41,9 @@
                             <li class="nav-item d-none" id="add-pic-link">
                                 <a class="nav-link text-light" href="#">Add your picture!</a>
                             </li>
+                            <li class="nav-item d-none" id="cart-page-link">
+                                <a class="nav-link text-light" href="#"><i class="bi bi-cart-plus"></i> Cart</a>
+                            </li>
                         </ul>
                         <ul class="navbar-nav d-flex flex-row mt-2">
                             <li class="nav-item me-2"><a class="nav-link text-light d-none" href="#"
@@ -120,6 +123,15 @@
                     <tbody class="table-group-divider" id="table-rows-cards">
                     </tbody>
                 </table>
+            </div>
+            <!-- Cart page -->
+            <div id="cart-page" class="d-none">
+                <h1 class="display-4">Shop Cart</h1>
+                <div id="cartDiv" class="d-flex flex-wrap">
+                    <div class="alert alert-info" role="alert">
+                        Your shopping cart is empty... it's time to start filling!
+                    </div>
+                </div>
             </div>
             <!-- login page -->
             <div id="login-page" class="d-none">

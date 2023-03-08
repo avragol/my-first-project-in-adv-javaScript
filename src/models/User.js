@@ -10,6 +10,7 @@ class User {
         this.password = password;
         this.phone = phone;
         this.isAdmin = isAdmin;
+        this.cart = [];
     }
     getFullName() {
         return `${this.firstName} ${this.lastName}`
